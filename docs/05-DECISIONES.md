@@ -5,6 +5,16 @@
 
 ---
 
+### 2026-08-14 — Integración de React vía `astro add`
+
+**Decisión:** se agregó React con `pnpm astro add react` (sin configuración
+manual ni extras). Quedó `@astrojs/react` + React 19, `jsx: "react-jsx"` en
+`tsconfig.json`, y la integración `react()` en `astro.config.mjs`. Sin SWC ni
+`experimentalReactCompiler` por ahora.
+**Razón:** `astro add` es la vía oficial y mantiene la configuración mínima
+que pide el stack. Los tipos de React quedaron en `dependencies` (comportamiento
+por defecto de `astro add`); no afecta el resultado final del build.
+
 ### 2026-08-14 — Template minimal + TypeScript strict para el scaffold
 
 **Decisión:** se inicializó Astro con el template `minimal`, TypeScript `strict`,

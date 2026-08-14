@@ -5,6 +5,33 @@
 
 ---
 
+## Sesión — 2026-08-14 (4.ª)
+
+**Fase actual:** Fase 0 (Setup inicial) — items 1 y 2 completados.
+
+**Hecho en esta sesión:**
+- Se agregó la integración de React con `pnpm astro add react --yes`
+  (Astro 7.2.2):
+  - Instalados `@astrojs/react@6.0.2`, `react@19.2.8`, `react-dom@19.2.8`
+    y tipos (`@types/react`, `@types/react-dom`).
+  - `astro.config.mjs`: agregada la integración `react()`.
+  - `tsconfig.json`: agregados `"jsx": "react-jsx"` y `"jsxImportSource": "react"`.
+- Smoke test: se creó una isla React temporal (`_smoke.tsx`) renderizada con
+  `client:load` en `index.astro`. `pnpm build` correcto y la isla se
+  generó/hidrató (JS bundle emitido). El componente temporal se eliminó al
+  verificar (árbol limpio; los componentes reales van en Fase 3).
+- Verificado: `pnpm build` correcto con y sin la isla de prueba.
+
+**Pendiente / próximo paso:**
+- Agregar Tailwind (`pnpm astro add tailwind`) — item 3 de Fase 0.
+- Luego configurar estructura de carpetas (item 4 de Fase 0).
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (3.ª)
 
 **Fase actual:** Fase 0 (Setup inicial) — item 1 completado.
