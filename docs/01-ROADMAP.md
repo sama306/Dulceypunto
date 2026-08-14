@@ -20,14 +20,14 @@ fase entera en una sola sesión.
 - [x] Recopilar logo real (PNG/SVG) — foto de perfil de Facebook → `src/assets/logo/perfil-1024.jpg`
 - [x] Recopilar fotos reales de productos — 16 fotos → `src/assets/products/`
 - [x] Identificar paleta de colores real — extraída del logo (ver `02-INFO-PENDIENTE.md`)
-- [ ] Identificar tipografía / estilo visual real (no hay fuente oficial → decidir en Fase 2)
+- [x] Identificar tipografía / estilo visual real (no hay fuente oficial → decidir en Fase 2)
 - [x] Completar `02-INFO-PENDIENTE.md` con datos del negocio (nombre, contacto, categorías, descripción)
 - [ ] Cargar precios y métodos de pago (los provee el dueño)
 
 ## Fase 2 — Diseño
 
-- [ ] Definir variables de color (`--color-primary`, etc.) en base a datos reales
-- [ ] Definir combinación tipográfica (título + texto)
+- [x] Definir variables de color (`--color-primary`, etc.) en base a datos reales
+- [x] Definir combinación tipográfica (título + texto)
 - [ ] Diseñar Navbar
 - [ ] Diseñar Hero
 - [ ] Diseñar cards de producto

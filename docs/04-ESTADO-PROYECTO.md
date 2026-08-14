@@ -5,6 +5,41 @@
 
 ---
 
+## Sesión — 2026-08-14 (7.ª)
+
+**Fase actual:** Fase 1 (Investigación) — tipografía decidida. Transición a Fase 2 (Diseño).
+
+**Hecho en esta sesión:**
+- Decidida la **tipografía** ("Boutique dulce"): Fraunces Variable `soft`
+  (títulos) + Mulish Variable (texto) + Caveat Variable (acentos). Sin fuente
+  oficial de la marca → combinación elegida, no se afirma que sea "la de la marca".
+- Instaladas las fuentes self-hosted: `@fontsource-variable/fraunces`,
+  `@fontsource-variable/mulish`, `@fontsource-variable/caveat`.
+- `src/styles/global.css`: bloque `@theme` de Tailwind v4 con las 3 familias
+  (`--font-display`, `--font-body`, `--font-hand`) y variables de color mapeadas
+  a la paleta real (`--color-primary #F0E0E0`, `--color-secondary #F0E0C0`,
+  `--color-accent #A09090`, `--color-background #F8F8F8`, `--color-surface
+  #FFFFFF`, `--color-text #504040`, `--color-text-muted #A09090`) + `--color-whatsapp #25D366`.
+  Base layer: body con Mulish, headings con Fraunces, `scroll-behavior: smooth`.
+- Descubierto y corregido: Tailwind v4 **escanea `docs/`** y generaba utilidades
+  fantasma (`text-sky-600`, `text-3xl`) desde el markdown. Se agregó
+  `@source not "../../docs";`. También se confirmó que Tailwind v4 **hace
+  tree-shaking de variables de tema no usadas** (solo se emiten al usarse).
+- Verificado con smoke test (import temporal de `global.css` + clases
+  `font-hand`/`bg-whatsapp`/`text-primary`): fuentes y variables se emiten
+  correctamente, sin utilidades fantasma. Luego `index.astro` revertido
+  (árbol limpio). `pnpm build` correcto.
+
+**Pendiente / próximo paso:**
+- Fase 1 completa. Próximo: **Fase 2 (Diseño)** — Navbar, Hero, cards, galería,
+  etc. (los items 1 y 2 de Fase 2 ya están hechos: colores y tipografía).
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (6.ª)
 
 **Fase actual:** Fase 0 (Setup inicial) — items 1 a 4 completados.

@@ -1,1 +1,43 @@
+@import "@fontsource-variable/fraunces/soft.css";
+@import "@fontsource-variable/mulish/index.css";
+@import "@fontsource-variable/caveat/index.css";
 @import "tailwindcss";
+
+@source not "../../docs";
+
+@theme {
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-body: "Mulish Variable", "Mulish", system-ui, sans-serif;
+  --font-hand: "Caveat Variable", "Caveat", cursive;
+
+  --color-primary: #F0E0E0;
+  --color-secondary: #F0E0C0;
+  --color-accent: #A09090;
+  --color-background: #F8F8F8;
+  --color-surface: #FFFFFF;
+  --color-text: #504040;
+  --color-text-muted: #A09090;
+  --color-whatsapp: #25D366;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}

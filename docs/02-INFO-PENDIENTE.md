@@ -18,7 +18,7 @@
 | Logo original | ✅ Confirmado | El logo oficial es **la foto de perfil** de Facebook. Descargado: `src/assets/logo/perfil-1024.jpg` (1024×1024). |
 | Portada (cover) | ✅ Confirmado | Descargada: `src/assets/logo/portada-735x420.jpg`. |
 | Paleta de colores | ✅ Confirmado | Extraída del logo por análisis de píxeles. Ver tabla de colores abajo. |
-| Tipografía utilizada | ❌ Falta | No hay fuente oficial detectada; decidir en Fase 2 sin afirmar que es "la de la marca". |
+| Tipografía utilizada | ✅ Decidida | No hay fuente oficial (la confirmó el dueño). Se eligió una combinación propia en Fase 2 — **no** se afirma que sea "la de la marca". Ver `05-DECISIONES.md`. |
 
 ### Paleta de colores — extraída del logo (2026-08-14)
 

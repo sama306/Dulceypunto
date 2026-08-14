@@ -5,6 +5,41 @@
 
 ---
 
+### 2026-08-14 — Tipografía: combinación "Boutique dulce" (Fraunces + Mulish + Caveat)
+
+**Decisión:** no hay fuente oficial de la marca (confirmado). Se eligió una
+combinación tipográfica propia, sin afirmar que sea "la de la marca":
+- **Títulos:** Fraunces Variable (serif display, variante `soft`) → `--font-display`
+- **Texto:** Mulish Variable → `--font-body`
+- **Acentos/taglines (uso dosificado):** Caveat Variable → `--font-hand`
+
+Se cargan **self-hosted** vía `@fontsource-variable` (no Google Fonts CDN):
+`fraunces/soft.css`, `mulish/index.css`, `caveat/index.css`.
+**Razón:** Fraunces `soft` eleva lo casero a "artesanal de regalo" y combina con la
+paleta crema/rosa/marrón; evita el cliché de script gigante de repostería. Mulish
+da legibilidad y Caveat aporta el toque "escrito a mano" solo en acentos.
+
+### 2026-08-14 — Variables de color en Tailwind v4 (`@theme`)
+
+**Decisión:** las variables de `03-STACK-Y-ESTRUCTURA.md` se definen en el bloque
+`@theme` de `src/styles/global.css`, mapeando la paleta real extraída del logo:
+`--color-primary #F0E0E0`, `--color-secondary #F0E0C0`, `--color-accent #A09090`,
+`--color-background #F8F8F8`, `--color-surface #FFFFFF` (neutro), `--color-text
+#504040`, `--color-text-muted #A09090`. Se agrega `--color-whatsapp #25D366`
+(color oficial de WhatsApp para el CTA, no es color de marca).
+**Razón:** Tailwind v4 genera utilidades (`bg-primary`, `text-text`, etc.)
+directamente desde `@theme`; acorde a la paleta real sin inventar colores.
+
+### 2026-08-14 — Excluir `docs/` del escaneo de Tailwind
+
+**Decisión:** se agrega `@source not "../../docs";` en `global.css` (el path es
+relativo al stylesheet en `src/styles/`).
+**Razón:** Tailwind v4 escanea por defecto todo el repo no gitignoreado; la
+carpeta `docs/` contiene clases de ejemplo en markdown (ej. `text-sky-600`) que
+generaban utilidades fantasma en el CSS de producción.
+
+---
+
 ### 2026-08-14 — Config de sitio y WhatsApp centralizada en `src/data/site.ts`
 
 **Decisión:** se centraliza la información de contacto/negocio en
