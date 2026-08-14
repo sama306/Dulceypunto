@@ -8,7 +8,7 @@ fase entera en una sola sesión.
 
 ## Fase 0 — Setup inicial (previa a todo)
 
-- [ ] Inicializar proyecto Astro en `/Dulceypunto` (`pnpm create astro@latest`)
+- [x] Inicializar proyecto Astro en `/Dulceypunto` (`pnpm create astro@latest`)
 - [ ] Agregar integración de React (`pnpm astro add react`)
 - [ ] Agregar Tailwind (`pnpm astro add tailwind`)
 - [ ] Configurar estructura de carpetas (ver `03-STACK-Y-ESTRUCTURA.md`)

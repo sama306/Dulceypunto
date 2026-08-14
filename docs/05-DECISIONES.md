@@ -5,6 +5,24 @@
 
 ---
 
+### 2026-08-14 — Template minimal + TypeScript strict para el scaffold
+
+**Decisión:** se inicializó Astro con el template `minimal`, TypeScript `strict`,
+git y `--no-ai`. Se usa `pnpm` siempre.
+**Razón:** el stack objetivo no necesita la plantilla `basics` (los componentes
+se construyen a mano en Fase 3); `minimal` deja la base más limpia. TS `strict`
+es la configuración recomendada por Astro para proyectos con tipos estrictos.
+
+### 2026-08-14 — Workaround de directorio no vacío en create-astro
+
+**Decisión:** `create-astro` rechaza carpetas que no estén vacías. Como
+`src/assets/` ya existía con las 18 fotos reales, se movió `src/` a un respaldo
+temporal en `D:\Temp\opencode\` durante el scaffold y se restauró después.
+**Razón:** garantizar que las fotos reales del negocio nunca se pierdan y que
+el proyecto se genere en la raíz (`/Dulceypunto`) y no en una subcarpeta.
+
+---
+
 ### 2026-08-14 — Acceso a Facebook con navegador real
 
 **Decisión:** para extraer datos de la página (DulceyPunto.lovd) se usa un

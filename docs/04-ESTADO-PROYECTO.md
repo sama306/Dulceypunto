@@ -5,6 +5,29 @@
 
 ---
 
+## Sesión — 2026-08-14 (3.ª)
+
+**Fase actual:** Fase 0 (Setup inicial) — item 1 completado.
+
+**Hecho en esta sesión:**
+- Se inicializó el proyecto Astro en `/Dulceypunto` con
+  `pnpm create astro@latest . --template minimal --typescript strict --install --git --yes --no-ai`
+  (Astro **7.2.2**, TypeScript strict, git inicializado, template `minimal`).
+- Los assets reales (`src/assets/logo/` + `src/assets/products/`, 18 fotos)
+  se preservaron: se movieron a respaldo temporal durante el scaffold
+  (create-astro rechaza carpetas no vacías) y se restauraron intactos.
+- Verificado: `pnpm build` correcto (1 página estática).
+
+**Pendiente / próximo paso:**
+- Agregar integración de React (`pnpm astro add react`) — item 2 de Fase 0.
+- Luego Tailwind (`pnpm astro add tailwind`).
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (2.ª)
 
 **Fase actual:** Fase 1 (Investigación) — completada casi en su totalidad.
