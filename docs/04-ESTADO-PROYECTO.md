@@ -5,6 +5,42 @@
 
 ---
 
+## Sesión — 2026-08-14 (6.ª)
+
+**Fase actual:** Fase 0 (Setup inicial) — items 1 a 4 completados.
+
+**Hecho en esta sesión:**
+- Configurada la estructura de carpetas según `03-STACK-Y-ESTRUCTURA.md`
+  (item 4 de Fase 0). Esqueleto creado, contenido real en Fase 3:
+  - `src/data/products.ts`: `interface Product` (modelo del doc 03),
+    `categories` (las 5 categorías ✅ confirmadas en `02`) y
+    `products: Product[] = []` vacío (se completa cuando el dueño cargue
+    catálogo/precios — no se inventan).
+  - `src/data/site.ts`: config centralizado (`siteConfig`) con datos ✅
+    confirmados (nombre, tagline, WhatsApp `5491165159776`, Instagram,
+    TikTok, Facebook, zona) + helper `waLink(message)` → `https://wa.me/...`
+    (convención de `03`: link centralizado, no hardcodeado).
+  - `src/layouts/Layout.astro`: layout base mínimo (`lang="es"`, charset,
+    viewport, props `title`/`description` con defaults, import formal de
+    `global.css` — su lugar según decisión de Tailwind v4).
+  - Carpetas vacías con `.gitkeep`: `src/assets/decorations/`,
+    `src/assets/gallery/`, `src/pages/productos/`.
+- NO se crearon aún los componentes de sección (`Navbar`, `Hero`, etc.)
+  ni `[slug].astro` → son Fase 3 (se mantiene el alcance de esta sesión).
+- Verificado: `pnpm build` correcto (1 página estática).
+
+**Pendiente / próximo paso:**
+- Fase 0 completa. Próximo: pasar a **Fase 1** (pendiente tipografía/estilo)
+  o **Fase 2** (variables de color con paleta real, tipografía, diseño).
+  Concretamente el próximo item pendiente del roadmap: identificar
+  tipografía/estilo visual real (Fase 1).
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (5.ª)
 
 **Fase actual:** Fase 0 (Setup inicial) — items 1 a 3 completados.

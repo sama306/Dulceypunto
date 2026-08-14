@@ -11,7 +11,7 @@ fase entera en una sola sesión.
 - [x] Inicializar proyecto Astro en `/Dulceypunto` (`pnpm create astro@latest`)
 - [x] Agregar integración de React (`pnpm astro add react`)
 - [x] Agregar Tailwind (`pnpm astro add tailwind`)
-- [ ] Configurar estructura de carpetas (ver `03-STACK-Y-ESTRUCTURA.md`)
+- [x] Configurar estructura de carpetas (ver `03-STACK-Y-ESTRUCTURA.md`)
 - [x] Crear `/docs` con estos documentos (✅ hecho)
 - [x] Primer commit
 

@@ -5,6 +5,25 @@
 
 ---
 
+### 2026-08-14 — Config de sitio y WhatsApp centralizada en `src/data/site.ts`
+
+**Decisión:** se centraliza la información de contacto/negocio en
+`src/data/site.ts` (`siteConfig` + helper `waLink(message)`), según la
+convención de `03-STACK-Y-ESTRUCTURA.md` de no hardcodear el link `wa.me`
+en cada componente. El catálogo va en `src/data/products.ts` (interface
+`Product` + `categories` confirmadas + `products` vacío hasta que el dueño
+cargue precios).
+**Razón:** un solo lugar para tocar contacto/WhatsApp y el modelo de
+producto, reutilizable en Fase 3.
+
+### 2026-08-14 — `Layout.astro` base en Fase 0 (esqueleto)
+
+**Decisión:** se crea `src/layouts/Layout.astro` como parte de la
+estructura de carpetas (Fase 0), con un mínimo viable: `lang="es"`, charset,
+viewport, props `title`/`description` y el import formal de `global.css`.
+**Razón:** el esqueleto necesita el layout para existir como estructura;
+los SEO tags avanzados (OG, schema, etc.) se completan en Fase 4.
+
 ### 2026-08-14 — Tailwind v4 vía plugin de Vite (`astro add tailwind`)
 
 **Decisión:** se agregó Tailwind con `pnpm astro add tailwind` (Astro 7.2.2).
