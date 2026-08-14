@@ -12,8 +12,8 @@ fase entera en una sola sesión.
 - [x] Agregar integración de React (`pnpm astro add react`)
 - [x] Agregar Tailwind (`pnpm astro add tailwind`)
 - [ ] Configurar estructura de carpetas (ver `03-STACK-Y-ESTRUCTURA.md`)
-- [ ] Crear `/docs` con estos documentos (✅ hecho)
-- [ ] Primer commit
+- [x] Crear `/docs` con estos documentos (✅ hecho)
+- [x] Primer commit
 
 ## Fase 1 — Investigación
 
