@@ -5,6 +5,19 @@
 
 ---
 
+### 2026-08-14 — Tailwind v4 vía plugin de Vite (`astro add tailwind`)
+
+**Decisión:** se agregó Tailwind con `pnpm astro add tailwind` (Astro 7.2.2).
+Quedó **Tailwind v4** (`tailwindcss@4.3.3` + `@tailwindcss/vite@4.3.3`) como
+plugin de Vite en `astro.config.mjs` (`vite.plugins: [tailwindcss()]`), con
+`src/styles/global.css` (`@import "tailwindcss";`). **No** se usa
+`@astrojs/tailwind` ni `tailwind.config` (v4 no lo requiere). Sin variables
+de color personalizadas todavía: se definen en Fase 2 con la paleta real
+(ver `02-INFO-PENDIENTE.md`).
+**Razón:** `astro add` es la vía oficial; para Astro ≥ 5.2 instala Tailwind v4
+sin configuración manual. La importación formal de `global.css` queda para
+`Layout.astro` (Fase 3).
+
 ### 2026-08-14 — Integración de React vía `astro add`
 
 **Decisión:** se agregó React con `pnpm astro add react` (sin configuración

@@ -5,6 +5,37 @@
 
 ---
 
+## Sesión — 2026-08-14 (5.ª)
+
+**Fase actual:** Fase 0 (Setup inicial) — items 1 a 3 completados.
+
+**Hecho en esta sesión:**
+- Se agregó Tailwind con `pnpm astro add tailwind --yes` (Astro 7.2.2).
+  El comando terminó con exit code 1 en el paso final de re-ejecución del
+  CLI (falla de ruta en Windows), pero todos los cambios reales se aplicaron
+  correctamente (verificado):
+  - Instalados `@tailwindcss/vite@4.3.3` y `tailwindcss@4.3.3`
+    (Tailwind **v4**, vía plugin de Vite; sin `@astrojs/tailwind`).
+  - `astro.config.mjs`: agregado `import tailwindcss from '@tailwindcss/vite'`
+    y `vite: { plugins: [tailwindcss()] }`.
+  - Creado `src/styles/global.css` con `@import "tailwindcss";`.
+- Smoke test (como con la isla `_smoke.tsx`): se importó `global.css` en
+  `index.astro` con utilidades (`text-3xl font-bold text-sky-600`),
+  `pnpm build` correcto y el CSS emitido contenía esas clases
+  (`.text-3xl`, `.text-sky-600`, `.font-bold`). Luego se revirtió
+  `index.astro` a su estado original (árbol limpio, `git diff` vacío).
+  La importación formal de `global.css` va en `Layout.astro` (Fase 3).
+- Verificado: `pnpm build` correcto con el árbol limpio.
+
+**Pendiente / próximo paso:**
+- Configurar estructura de carpetas (item 4 de Fase 0) — ver `03-STACK-Y-ESTRUCTURA.md`.
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (4.ª)
 
 **Fase actual:** Fase 0 (Setup inicial) — items 1 y 2 completados.
