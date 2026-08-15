@@ -5,6 +5,25 @@
 
 ---
 
+### 2026-08-14 — Hero: diseño "Vitrina dulce" e implementación
+
+**Decisión:** hero de 2 columnas en desktop (texto a la izquierda, collage de fotos
+reales a la derecha) y apilado en mobile, sobre gradiente crema → blanco con blobs
+radiales sutiles. Texto solo con datos reales: eyebrow Caveat ("repostería 100%
+casera · Burzaco, PBA"), **H1** único con el tagline real en Fraunces, párrafo con
+las categorías reales, CTA primario WhatsApp (`waLink()`) y secundario ghost "Ver
+productos" → `#productos`, y chips de confianza confirmados (100% casero · Pedidos
+por WhatsApp · Burzaco, PBA). Collage con 3 fotos reales (`producto-12` central,
+`producto-04` y `producto-13`) con rotaciones suaves, ring blanco y sello Caveat
+flotante "hecho con amor". Animación de entrada con CSS keyframes (fade-up
+escalonado) sin librerías, respetando `prefers-reduced-motion`; sello con flotado
+lento. Imágenes con `<img>` directo (la central con `fetchpriority="high"`).
+**Razón:** sigue la identidad real (paleta crema/rosa + Fraunces + Caveat) y la
+conversión vía WhatsApp del modelo de negocio; el collage usa material fotográfico
+real sin inventar; animación CSS pura por convención del proyecto (Fase 3 recién
+autoriza Framer Motion si hace falta); el `scroll-padding-top` global corrige los
+anclas bajo el navbar sticky.
+
 ### 2026-08-14 — Navbar: diseño e implementación
 
 **Decisión:** navbar sticky con fondo translúcido (`--color-surface` al 70 % +

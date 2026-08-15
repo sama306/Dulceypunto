@@ -5,6 +5,53 @@
 
 ---
 
+## Sesión — 2026-08-14 (9.ª)
+
+**Fase actual:** Fase 2 (Diseño) — Hero diseñado e implementado.
+
+**Hecho en esta sesión:**
+- Diseñado e implementado el **Hero** (items Fase 2 "Diseñar Hero" y Fase 3
+  "`Hero.astro`"):
+  - `src/components/Hero.astro`: sección `#inicio` a pantalla completa (descontando
+    el navbar sticky), 2 columnas en desktop (texto izquierda + collage de fotos
+    reales derecha), apilado en mobile. Fondo gradiente crema → blanco con blobs
+    radiales animados sutiles (beige/crema).
+  - Texto 100% datos reales: eyebrow Caveat "repostería 100% casera · Burzaco, PBA",
+    **H1** (único de la página, Fraunces) con el tagline real
+    "Detalles dulces para regalar, sorprender o mimarte 💕", párrafo Mulish con las
+    categorías reales, **CTAs** (primario pill verde WhatsApp vía `waLink()`,
+    secundario ghost "Ver productos" → `#productos`) y chips de confianza
+    (100% casero · Pedidos por WhatsApp · Burzaco, PBA).
+  - **Collage** con 3 fotos reales de `src/assets/products/` (`producto-12` box
+    para mates central, `producto-04` box día del amigo, `producto-13` combo),
+    con rotaciones suaves, ring blanco, sombra y sello circular Caveat flotante
+    "hecho con amor".
+  - **Animación de entrada:** CSS keyframes (fade-up escalonado con delays) +
+    flotado lento del sello, sin librerías, respetando `prefers-reduced-motion`.
+    Imágenes con `<img>` directo (decisión sharp pendiente), la central con
+    `fetchpriority="high"`.
+- `src/pages/index.astro`: la sección placeholder `#inicio` se reemplazó por
+  `<Hero />`; el resto de secciones siguen como placeholder.
+- `src/styles/global.css`: agregado `scroll-padding-top: 4.5rem` en `html` para que
+  los anclas no queden tapadas por el navbar sticky.
+- Verificado: `pnpm build` correcto. Check en navegador (desktop 1440 y móvil 390
+  con emulación): sin errores de consola, H1 en Fraunces, 3 imágenes cargadas
+  (1160/1080/1152 px), animación de entrada completada (opacity 1), collage y
+  sello dentro de límites, **sin overflow horizontal** en móvil. Captura de
+  referencia: `D:\Temp\opencode\hero-preview.png`.
+
+**Pendiente / próximo paso:**
+- Fase 2: siguiente item **"Diseñar cards de producto"**. Cargar precios sigue
+  postergado (los provee el dueño).
+- Nota: la portada (`portada-735x420.jpg`) figura como descargada en
+  `02-INFO-PENDIENTE.md` pero no está en `src/assets/logo/` (solo `perfil-1024.jpg`).
+  No se usó en el hero; conviene re-descargarla.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (8.ª)
 
 **Fase actual:** Fase 2 (Diseño) — Navbar diseñado e implementado.

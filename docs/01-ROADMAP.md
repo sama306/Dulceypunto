@@ -29,7 +29,7 @@ fase entera en una sola sesión.
 - [x] Definir variables de color (`--color-primary`, etc.) en base a datos reales
 - [x] Definir combinación tipográfica (título + texto)
 - [x] Diseñar Navbar
-- [ ] Diseñar Hero
+- [x] Diseñar Hero
 - [ ] Diseñar cards de producto
 - [ ] Diseñar sección de catálogo/filtros
 - [ ] Diseñar galería (bento/masonry)
@@ -39,7 +39,7 @@ fase entera en una sola sesión.
 
 - [ ] `Layout.astro` base + SEO tags genéricos
 - [x] `Navbar.astro` (sticky, responsive, botón WhatsApp)
-- [ ] `Hero.astro` (con animación de entrada)
+- [x] `Hero.astro` (con animación de entrada)
 - [ ] `FeaturedProducts.astro` + `ProductCard.astro`
 - [ ] `ProductCategories.astro` (filtro por categoría)
 - [ ] `Gallery.astro` (lightbox al hacer click)
