@@ -5,6 +5,26 @@
 
 ---
 
+### 2026-08-14 — Navbar: diseño e implementación
+
+**Decisión:** navbar sticky con fondo translúcido (`--color-surface` al 70 % +
+`backdrop-blur`) que al hacer scroll se vuelve más opaco y agrega sombra suave
+(clase `nav-scrolled` toggled por un `<script>` liviano). Composición: logo
+circular (la foto de perfil `perfil-1024.jpg`) + wordmark "Dulce & Punto" en
+Fraunces con acento Caveat "hecho con amor". Links ancla a las secciones de la
+landing (Inicio, Productos, Galería, Sobre nosotros, Contacto) con subrayado en
+marrón-mauve en hover y **scrollspy** (IntersectionObserver) que marca el link
+activo con `aria-current`. CTA de WhatsApp en pill verde usando `waLink()` de
+`src/data/site.ts`. El menú móvil es una **isla React** (`MobileMenu.tsx`,
+`client:load`) con toggle hamburguesa ↔ X, panel full-width, cierre con `Esc` y
+al navegar (`aria-expanded`/`aria-controls`).
+**Razón:** sigue la identidad real (paleta crema/rosa + Fraunces); el fondo
+translúcido con blur funciona sobre cualquier hero futuro (evita re-trabajo);
+scrollspy con IntersectionObserver es liviano y sin librerías; el menú móvil usa
+React según la convención de interactividad del proyecto. El logo usa `<img>`
+directo (no Astro `<Image>`) porque `sharp` todavía no está instalado; la
+optimización de imágenes (WebP/AVIF) queda para Fase 3 como indica el roadmap.
+
 ### 2026-08-14 — Tipografía: combinación "Boutique dulce" (Fraunces + Mulish + Caveat)
 
 **Decisión:** no hay fuente oficial de la marca (confirmado). Se eligió una

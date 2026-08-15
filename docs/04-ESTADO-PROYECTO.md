@@ -5,7 +5,47 @@
 
 ---
 
-## Sesión — 2026-08-14 (7.ª)
+## Sesión — 2026-08-14 (8.ª)
+
+**Fase actual:** Fase 2 (Diseño) — Navbar diseñado e implementado.
+
+**Hecho en esta sesión:**
+- Diseñado e implementado el **Navbar** (items Fase 2 "Diseñar Navbar" y Fase 3
+  "`Navbar.astro`"):
+  - `src/components/Navbar.astro`: sticky, fondo translúcido (`surface` 70 %) +
+    `backdrop-blur`, borde inferior en acento sutil; al scrollear se vuelve más
+    opaco y suma sombra (`nav-scrolled`). Logo circular (`perfil-1024.jpg`) +
+    wordmark Fraunces + acento Caveat "hecho con amor". Links ancla (Inicio,
+    Productos, Galería, Sobre nosotros, Contacto) con subrayado en hover y
+    scrollspy (IntersectionObserver) que resalta el link activo con
+    `aria-current`. CTA de WhatsApp pill verde vía `waLink()` de `site.ts`.
+  - `src/components/MobileMenu.tsx` (isla React `client:load`): toggle
+    hamburguesa ↔ X, panel full-width con links + CTA, cierra con `Esc` y al
+    navegar. Accesible (`aria-expanded`/`aria-controls`).
+  - `src/pages/index.astro`: reescrito para usar `Layout.astro` (carga paleta y
+    fuentes) + `<Navbar />` + `<main>` con las 5 secciones ancla placeholder,
+    marcadas claramente "en construcción (Fase 3)".
+- El logo del navbar usa `<img>` directo (no Astro `<Image>`) porque `sharp` no
+  está instalado y `pnpm build` fallaba en la optimización de imágenes. La
+  optimización (WebP/AVIF, lazy) queda para Fase 3 según el roadmap.
+- Verificado: `pnpm build` correcto. Check en navegador (desktop y móvil):
+  hidratación React sin errores, menú móvil abre/cierra (y con `Esc`), scrollspy
+  marca el link activo al hacer click, sombra al scrollear, estilos computados
+  correctos (Fraunces/Caveat, blur, CTA verde, recorte circular del logo).
+- **Incidente resuelto:** el dev server de la sesión anterior tenía el cache de
+  Vite corrupto (`react/jsx-dev-runtime` pre-bundlado en modo production →
+  `jsxDEV` undefined → la isla React no hidrataba). Se reinició `astro dev` con
+  `node_modules/.vite` limpio.
+
+**Pendiente / próximo paso:**
+- Fase 2: siguiente item **"Diseñar Hero"**. Cargar precios sigue postergado
+  (los provee el dueño).
+- El dueño proveerá: precios, métodos de pago y detalle de zonas de entrega.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
 
 **Fase actual:** Fase 1 (Investigación) — tipografía decidida. Transición a Fase 2 (Diseño).
 

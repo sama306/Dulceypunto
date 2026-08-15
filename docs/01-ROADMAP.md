@@ -28,7 +28,7 @@ fase entera en una sola sesión.
 
 - [x] Definir variables de color (`--color-primary`, etc.) en base a datos reales
 - [x] Definir combinación tipográfica (título + texto)
-- [ ] Diseñar Navbar
+- [x] Diseñar Navbar
 - [ ] Diseñar Hero
 - [ ] Diseñar cards de producto
 - [ ] Diseñar sección de catálogo/filtros
@@ -38,7 +38,7 @@ fase entera en una sola sesión.
 ## Fase 3 — Desarrollo
 
 - [ ] `Layout.astro` base + SEO tags genéricos
-- [ ] `Navbar.astro` (sticky, responsive, botón WhatsApp)
+- [x] `Navbar.astro` (sticky, responsive, botón WhatsApp)
 - [ ] `Hero.astro` (con animación de entrada)
 - [ ] `FeaturedProducts.astro` + `ProductCard.astro`
 - [ ] `ProductCategories.astro` (filtro por categoría)

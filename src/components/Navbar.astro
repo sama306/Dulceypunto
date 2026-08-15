@@ -1,0 +1,149 @@
+---
+import { siteConfig, waLink } from '../data/site';
+import MobileMenu from './MobileMenu';
+import perfil from '../assets/logo/perfil-1024.jpg';
+
+const links = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#productos', label: 'Productos' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#sobre', label: 'Sobre nosotros' },
+  { href: '#contacto', label: 'Contacto' },
+];
+
+const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero hacer una consulta 💕`);
+---
+
+<header class="sticky top-0 z-50">
+  <div id="navbar-inner" class="nav-bar relative border-b border-accent/15 backdrop-blur-md">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[4.5rem]">
+      <a href="#inicio" class="group flex min-w-0 items-center gap-3" aria-label="Dulce & Punto — volver al inicio">
+        <span class="shrink-0 overflow-hidden rounded-full ring-1 ring-accent/30 ring-offset-2 ring-offset-background transition-transform duration-300 group-hover:scale-105">
+          <img src={perfil.src} alt="Logo de Dulce & Punto" width={96} height={96} class="h-10 w-10 rounded-full object-cover lg:h-12 lg:w-12" />
+        </span>
+        <span class="min-w-0 leading-none">
+          <span class="block truncate font-display text-lg font-semibold tracking-tight text-text lg:text-xl">Dulce &amp; Punto</span>
+          <span class="block truncate font-hand text-base text-accent">hecho con amor</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-1 md:flex" aria-label="Principal">
+        {
+          links.map((link) => (
+            <a
+              data-nav
+              href={link.href}
+              class="nav-link rounded-full px-4 py-2 text-[0.95rem] font-medium text-text/80 transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden items-center gap-2 rounded-full bg-whatsapp px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-whatsapp/25 transition hover:brightness-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp sm:inline-flex lg:px-6 lg:py-3"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.13-1.47-.72-1.7-.81-.22-.08-.39-.13-.55.13-.16.25-.63.8-.77.97-.14.16-.28.18-.53.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.55-1.32-.76-1.81-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z" />
+          </svg>
+          Consultar
+        </a>
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Consultar por WhatsApp"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-whatsapp text-white shadow-md shadow-whatsapp/25 transition hover:brightness-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-whatsapp sm:hidden"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.13-1.47-.72-1.7-.81-.22-.08-.39-.13-.55.13-.16.25-.63.8-.77.97-.14.16-.28.18-.53.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.55-1.32-.76-1.81-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z" />
+          </svg>
+        </a>
+        <MobileMenu client:load links={links} ctaHref={ctaHref} />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-bar {
+    background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  }
+
+  .nav-bar.nav-scrolled {
+    background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow: 0 10px 30px -12px rgb(80 64 64 / 0.25);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0.25rem;
+    width: 55%;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.nav-active::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .nav-link.nav-active {
+    color: var(--color-text);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::after {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const navInner = document.getElementById('navbar-inner');
+  const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[data-nav]'));
+  const sections = navLinks
+    .map((link) => link.getAttribute('href'))
+    .filter((href): href is string => Boolean(href))
+    .map((href) => document.getElementById(href.slice(1)))
+    .filter((element): element is HTMLElement => Boolean(element));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        const id = entry.target.id;
+        for (const link of navLinks) {
+          const isActive = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('nav-active', isActive);
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        }
+      }
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  for (const section of sections) observer.observe(section);
+
+  function onScroll() {
+    navInner?.classList.toggle('nav-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
