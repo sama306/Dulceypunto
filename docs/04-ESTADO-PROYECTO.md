@@ -5,6 +5,51 @@
 
 ---
 
+## Sesión — 2026-08-20 (13.ª)
+
+**Fase actual:** Fase 2 (Diseño) — **completa**. Sección de contacto diseñada e implementada.
+
+**Hecho en esta sesión:**
+- Diseñada e implementada la **sección de contacto** (item Fase 2 "Diseñar sección de
+  contacto" + Fase 3 "`Contact.astro`", **sin Footer** — decisión del usuario: el Footer
+  queda para una próxima sesión):
+  - `src/components/Contact.astro`: sección `#contacto` con header consistente con las
+    demás secciones (eyebrow Caveat "escribinos · te respondemos 💕", H2 Fraunces
+    "Contacto", sub Mulish con datos reales) sobre gradiente crema
+    (`from-background via-primary/25 to-background`). **Layout "WhatsApp protagonista +
+    redes"** (decisión del usuario): en desktop `lg:grid-cols-[1.05fr_0.95fr]` (estilo
+    Hero), apilado en mobile.
+    - **Columna izquierda (conversión):** card surface con título "¿Consultas o pedidos?",
+      CTA pill verde WhatsApp vía `waLink()` (mensaje genérico de consulta), teléfono
+      `011 6515-9776` como link `tel:+5491165159776` + **botón copiar** (script liviano
+      inline, patrón `Navbar`) con feedback "¡Copiado!" por 2 s, y chip "Burzaco, PBA".
+    - **Columna derecha (redes):** 3 cards estilo `ProductCard` (surface, ring, hover
+      `-translate-y-1`) con iconos SVG inline (Instagram/TikTok/Facebook, sin librerías),
+      usuarios reales confirmados (`@dulceypunto.love`, `@DulceyPunto.love ❤️`, "Dulce &
+      Punto") y flecha "abrir →" externo (`target="_blank" rel="noopener noreferrer"`).
+  - **No se publican** datos no confirmados: horario (decisión previa), métodos de pago ni
+    detalle de zonas de entrega (a cargo del dueño).
+- `src/pages/index.astro`: el placeholder `#contacto` se reemplazó por `<Contact />`.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440 y móvil
+  390 emulado): grid 2 columnas desktop / 1 columna apilada móvil, sin overflow horizontal,
+  sin errores de consola, links reales correctos (wa.me con mensaje, tel:, instagram,
+  tiktok, facebook), botón copiar funciona (cambia a "¡Copiado!" y vuelve a "Copiar").
+  Capturas: `D:\Temp\opencode\contacto-desktop.png` y `contacto-movil.png`.
+
+**Pendiente / próximo paso:**
+- Fase 2 (Diseño) **completa**. Próximo: pasar a los items restantes de **Fase 3**
+  (secciones: `About.astro`, `Benefits.astro`, `CustomOrders.astro`, `SocialSection.astro`,
+  `Footer.astro`; luego carga desde `products.ts`, responsive, animaciones, optimización de
+  imágenes). Cargar precios sigue postergado (los provee el dueño).
+- Pendiente de sesiones anteriores: re-descargar la portada
+  (`portada-735x420.jpg`) que figura descargada en `02` pero no está en
+  `src/assets/logo/`.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-19 (12.ª)
 
 **Fase actual:** Fase 2 (Diseño) — Sección de galería diseñada e implementada.

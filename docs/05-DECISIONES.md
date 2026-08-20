@@ -5,6 +5,27 @@
 
 ---
 
+### 2026-08-20 — Sección de contacto: "WhatsApp protagonista + redes" e implementación
+
+**Decisión:** la sección `#contacto` se diseña e implementa en una sola sesión (patrón de
+las sesiones previas), con **layout "WhatsApp protagonista + redes"** (elegido por el
+usuario): en desktop 2 columnas `lg:grid-cols-[1.05fr_0.95fr]` (estilo Hero), apilado en
+mobile. Columna izquierda = card de conversión (título "¿Consultas o pedidos?", CTA pill
+verde WhatsApp vía `waLink()` con mensaje genérico, teléfono `011 6515-9776` como link
+`tel:+5491165159776` + **botón copiar** con script liviano inline — patrón `Navbar`, no isla
+React para una interacción trivial — y chip "Burzaco, PBA"). Columna derecha = 3 cards de
+redes (Instagram, TikTok, Facebook) estilo `ProductCard`, con iconos SVG inline (sin
+librerías) y usuarios reales confirmados. **No se publican** horario (decisión previa),
+métodos de pago ni detalle de zonas de entrega (datos no confirmados, a cargo del dueño).
+**El `Footer` queda para una sesión siguiente** (item separado de Fase 3).
+**Razón:** la conversión del negocio es 100 % vía WhatsApp, así que el CTA verde es el
+protagonista visual; las redes quedan secundarias pero accesibles en un solo vistazo. Se
+siguen las convenciones del proyecto: solo datos reales, iconos inline, accesibilidad con
+`focus-visible`, sección `.astro` sin isla (la única interacción — copiar — es trivial y se
+resuelve con un `<script>` liviano como el scrollspy del `Navbar`).
+
+---
+
 ### 2026-08-19 — Cards del catálogo y detalle: `object-contain` (fix de recorte)
 
 **Decisión:** las imágenes de las cards de "Nuestros Productos" y de la página de

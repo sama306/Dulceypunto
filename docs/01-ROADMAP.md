@@ -33,7 +33,7 @@ fase entera en una sola sesión.
 - [x] Diseñar cards de producto
 - [x] Diseñar sección de catálogo/filtros
 - [x] Diseñar galería (bento/masonry)
-- [ ] Diseñar sección de contacto
+- [x] Diseñar sección de contacto
 
 ## Fase 3 — Desarrollo
 
