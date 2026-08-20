@@ -46,7 +46,6 @@ fase entera en una sola sesión.
 - [x] `Gallery.astro` (lightbox al hacer click)
 - [x] `About.astro` (sobre la marca)
 - [x] `CustomOrders.astro` (pedidos personalizados)
-- [ ] `SocialSection.astro` (Instagram/redes)
 - [x] `Contact.astro`
 - [ ] `Footer.astro`
 - [ ] Carga de productos desde `src/data/products.ts`
