@@ -5,6 +5,28 @@
 
 ---
 
+## Sesión — 2026-08-20 (18.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — marcados como completados 3 items que ya estaban implementados.
+
+**Hecho en esta sesión:**
+- Verificado en código y marcados `[x]` en `01-ROADMAP.md` (Fase 3) los siguientes items que **ya estaban implementados** pero figuraban como pendientes:
+  - **"Carga de productos desde `src/data/products.ts`"**: 6 productos reales cargados en `src/data/products.ts` (sesiones 10-11) y renderizados por `ProductCatalog.astro` + `ProductFilter.tsx` (isla `client:load`).
+  - **"Integración de botones WhatsApp (deep link `wa.me`)"**: helper `waLink()` en `src/data/site.ts` → `https://wa.me/5491165159776?text=...`, usado como CTA en `Navbar.astro`, `MobileMenu.tsx`, `Hero.astro`, `CustomOrders.astro`, `Contact.astro` y `productos/[slug].astro`.
+  - **"Responsive completo (mobile-first)"**: todas las secciones construidas mobile-first (Tailwind `grid-cols-1` → `sm:` → `lg:`) y verificadas en cada sesión (desktop 1440 / móvil 390 emulado, sin overflow horizontal).
+- **Cargar precios sigue postergado** (los provee el dueño, item de Fase 1): no se tocó `src/data/products.ts` (el campo `price?` sigue sin valores).
+- Aclarado: `Benefits.astro` y `SocialSection.astro` figuran como "pendiente" en sesiones anteriores pero **no son items del roadmap** (la estructura de `03-STACK-Y-ESTRUCTURA.md` los listaba, el roadmap no).
+
+**Pendiente / próximo paso:**
+- Fase 3: items reales que quedan — **Animaciones** (fade/scroll/hover sin afectar performance; hoy solo hay animaciones CSS de entrada por sección) y **Optimización de imágenes** (Astro Image, WebP/AVIF, lazy loading; sharp no está instalado, se usa `<img>` directo con `loading="lazy"`).
+- Cargar precios sigue postergado (los provee el dueño).
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el dominio en Fase 5), sitemap, robots.txt, alt text.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (17.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — item `Footer.astro` completado.
