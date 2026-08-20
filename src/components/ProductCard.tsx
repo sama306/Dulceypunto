@@ -25,7 +25,7 @@ export default function ProductCard({ product }: Props) {
           height={product.image.height}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover transition duration-500 ease-out group-hover:scale-105"
+          className="h-full w-full object-contain transition duration-500 ease-out group-hover:scale-105"
         />
         {product.badge && (
           <span className="absolute left-3 top-3 rounded-full bg-surface/85 px-3 py-1 font-hand text-lg leading-none text-text backdrop-blur-sm">

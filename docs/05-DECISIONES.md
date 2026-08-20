@@ -5,6 +5,20 @@
 
 ---
 
+### 2026-08-19 — Cards del catálogo y detalle: `object-contain` (fix de recorte)
+
+**Decisión:** las imágenes de las cards de "Nuestros Productos" y de la página de
+detalle (`productos/[slug].astro`) usan `object-contain` en vez de `object-cover`
+sobre la caja `aspect-[4/3]` (con fondo crema `bg-secondary/40` que ya tenían).
+**Razón:** `object-cover` recortaba las fotos que no encajaban en la caja 4:3
+(por cálculo: Box día del amigo y Combo mostraban ~75 % de la foto, cortando
+arriba/abajo; el Box para mates cuadrado cortaba los lados). `object-contain`
+garantiza que la foto completa se vea siempre, manteniendo la grilla uniforme
+(las muy verticales/cuadradas quedan con bandas crema sutiles, consistente con la
+paleta). Es el mismo criterio del fix del lightbox de la galería.
+
+---
+
 ### 2026-08-19 — Lightbox: altura de imagen con límite de viewport (fix)
 
 **Decisión:** la `<img>` del lightbox usa `h-auto w-auto max-w-full

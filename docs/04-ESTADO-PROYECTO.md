@@ -48,6 +48,17 @@
   entra completa en desktop 1440×900 (672×378 px dentro del diálogo) y en móvil
   390×844 (570×321 px), sin overflow (`scrollHeight === clientHeight`). La
   grilla masonry ya mostraba las fotos completas (altura auto).
+- **Fix post-verificación (cards del catálogo y detalle):** las imágenes de
+  "Nuestros Productos" tenían el mismo problema de recorte: `object-cover` en la
+  caja fija `aspect-[4/3]` cortaba las fotos que no encajaban (calculado: Box día
+  del amigo `producto-04` y Combo `producto-13` mostraban ~75 %, Box para mates
+  `producto-12` cuadrada cortaba lados). Se cambió a `object-contain` en
+  `ProductCard.tsx` (card del catálogo) y en `productos/[slug].astro` (imagen del
+  detalle), manteniendo la caja 4:3 y el fondo crema `bg-secondary/40` para las
+  bandas. Verificado en build: los 6 cards con `object-fit: contain` en desktop
+  1440 y móvil 390 (foto completa siempre visible, sin overflow, grilla uniforme)
+  y el detalle `/productos/box-para-mates/` con imagen contenida. Captura:
+  `D:\Temp\opencode\cards-object-contain-desktop.png`.
 - Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop
   1440 y móvil 390 emulado): masonry 4 columnas desktop / 2 móvil, **15 items**,
   sin overflow horizontal, sin errores de consola; lightbox abre (foco en
