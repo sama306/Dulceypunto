@@ -5,6 +5,47 @@
 
 ---
 
+## Sesión — 2026-08-20 (14.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — primer item completado: `Layout.astro` base + SEO tags genéricos.
+
+**Hecho en esta sesión:**
+- Completado el item de Fase 3 **"`Layout.astro` base + SEO tags genéricos"**
+  (el layout existía como esqueleto mínimo desde Fase 0; ahora es el layout base
+  con SEO genérico):
+  - `src/layouts/Layout.astro`: los defaults `title`/`description` dejan de estar
+    hardcodeados y salen de `siteConfig` (`name`/`tagline`). Nueva prop
+    `noindex?: boolean` (default `false`). Tags genéricos agregados:
+    `<meta name="theme-color" content="#F8F8F8">`, `<meta name="robots">`
+    (`index, follow` / `noindex, nofollow`), `<meta name="author"
+    content="Dulce & Punto">`, `<link rel="icon">` para `/favicon.svg` y
+    `/favicon.ico` (archivos ya presentes en `public/`), y `<link rel="canonical">`
+    **emitido solo si `Astro.site` está configurado** (`new URL(Astro.url.pathname,
+    Astro.site)`) — hoy no se emite porque el dominio se define en Fase 5.
+    Se agregó `<slot name="head" />` para tags por página. El layout sigue siendo
+    shell (cada página importa su `Navbar`). **Open Graph/Twitter y Schema.org
+    quedan para Fase 4** (decisión registrada en `05-DECISIONES.md`).
+  - **Cargar precios sigue postergado** (los provee el dueño); no se tocó
+    `src/data/products.ts`.
+- Verificado: `pnpm build` correcto (7 páginas). Inspección de `dist/index.html` y
+  `dist/productos/box-para-mates/index.html`: head emite theme-color, robots,
+  author, los 2 favicons, description/title por página correctos, y **sin**
+  canonical (correcto, no hay `site` configurado).
+
+**Pendiente / próximo paso:**
+- Fase 3: siguiente item **`About.astro`** (sobre la marca). Luego
+  `Benefits.astro`, `CustomOrders.astro`, `SocialSection.astro`, `Footer.astro`.
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el
+  dominio en Fase 5), sitemap, robots.txt, favicon ya resuelto, alt text.
+- Pendiente de sesiones anteriores: re-descargar la portada
+  (`portada-735x420.jpg`) que figura descargada en `02` — **resuelto**: el archivo
+  ya está en `src/assets/logo/`.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (13.ª)
 
 **Fase actual:** Fase 2 (Diseño) — **completa**. Sección de contacto diseñada e implementada.

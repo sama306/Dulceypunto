@@ -37,7 +37,7 @@ fase entera en una sola sesión.
 
 ## Fase 3 — Desarrollo
 
-- [ ] `Layout.astro` base + SEO tags genéricos
+- [x] `Layout.astro` base + SEO tags genéricos
 - [x] `Navbar.astro` (sticky, responsive, botón WhatsApp)
 - [x] `Hero.astro` (con animación de entrada)
 - [x] `FeaturedProducts.astro` (reemplazada por `ProductCatalog.astro` en la sesión 11)

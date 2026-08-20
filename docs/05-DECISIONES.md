@@ -5,6 +5,28 @@
 
 ---
 
+### 2026-08-20 — `Layout.astro`: SEO tags genéricos y canonical guardado
+
+**Decisión:** en el item de Fase 3 "`Layout.astro` base + SEO tags genéricos" se
+completa el layout con tags genéricos, **dejando Open Graph/Twitter y Schema.org
+para Fase 4** (como indicaba la decisión de 2026-08-14). Se agregan:
+`<meta name="theme-color">` (`#F8F8F8`, fondo de marca), `<meta name="robots">`
+(`index, follow` con prop `noindex` para override), `<meta name="author">`
+(`siteConfig.name`), `<link rel="canonical">` **emitido solo si `Astro.site`
+está configurado** (`new URL(Astro.url.pathname, Astro.site)`), links de favicon
+(`/favicon.svg` + `/favicon.ico`, archivos ya presentes en `public/`) y
+`<slot name="head" />` para tags por página. Los defaults `title`/`description`
+dejan de estar hardcodeados y salen de `siteConfig` (`name`/`tagline`). El layout
+sigue siendo shell (el `Navbar` lo importa cada página).
+**Razón:** "genéricos" = tags iguales para todas las páginas o derivados de las
+props del layout, sin inventar datos; el canonical necesita un origen absoluto y
+el dominio se define recién en Fase 5 (deploy), así que el código queda listo y
+comienza a emitirse cuando se configure `site`. Favicon se adelanta porque los
+archivos ya existen y es un tag genérico trivial. OG/schema quedan en Fase 4 por
+la decisión previa.
+
+---
+
 ### 2026-08-20 — Sección de contacto: "WhatsApp protagonista + redes" e implementación
 
 **Decisión:** la sección `#contacto` se diseña e implementa en una sola sesión (patrón de
