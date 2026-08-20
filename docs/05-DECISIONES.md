@@ -5,6 +5,30 @@
 
 ---
 
+### 2026-08-20 — Sección "Sobre nosotros": 2 columnas estilo Hero/Contacto e implementación
+
+**Decisión:** la sección `#sobre` se diseña e implementa en una sola sesión (patrón de
+las sesiones previas), con **layout "2 columnas estilo Hero/Contacto"** (elegido por el
+usuario): en desktop `lg:grid-cols-[1.05fr_0.95fr]`, apilado en mobile. **Contenido
+elegido por el usuario: descripción + tagline y chips de confianza** (sin chips de
+categorías ni CTAs). Columna izquierda = tagline real en destaque (Fraunces), párrafo
+con datos reales (emprendimiento de repostería 100% casera, qué se hace, pedidos por
+WhatsApp, Burzaco PBA), cierre "¡Hacemos todo con amor! 💕" en Caveat y chips de
+confianza (100% casero · Pedidos por WhatsApp · Burzaco, PBA — patrón del Hero).
+Columna derecha = collage con la **portada** como imagen principal (rounded, ring
+surface, sombra), el **logo circular** superpuesto abajo a la izquierda y el sello
+Caveat flotante "hecho con amor" arriba a la derecha (patrón del Hero). Animación de
+entrada CSS pura (fade-up escalonado + flotado del sello) con `prefers-reduced-motion`.
+**No se inventa historia de la marca** (fundadores, años, valores): solo datos
+confirmados de `02-INFO-PENDIENTE.md`.
+**Razón:** la sección cumple el item del roadmap con la identidad visual del sitio
+(paleta crema/rosa, Fraunces + Caveat), convierte el material real disponible (portada
+resuelta + logo) en un collage consistente con el Hero, y respeta la regla del proyecto
+de no inventar datos de marca. Sección `.astro` sin isla (no hay interactividad real),
+como el resto de secciones presentacionales.
+
+---
+
 ### 2026-08-20 — `Layout.astro`: SEO tags genéricos y canonical guardado
 
 **Decisión:** en el item de Fase 3 "`Layout.astro` base + SEO tags genéricos" se

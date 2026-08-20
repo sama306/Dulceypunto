@@ -44,7 +44,7 @@ fase entera en una sola sesión.
 - [x] `ProductCard` (implementada como `.tsx` en la sesión 11 — vive dentro del island de filtros)
 - [x] `ProductCategories.astro` (filtro por categoría — implementado como `ProductCatalog.astro` + island `ProductFilter.tsx`)
 - [x] `Gallery.astro` (lightbox al hacer click)
-- [ ] `About.astro` (sobre la marca)
+- [x] `About.astro` (sobre la marca)
 - [ ] `Benefits.astro` (por qué elegirnos)
 - [ ] `CustomOrders.astro` (pedidos personalizados)
 - [ ] `SocialSection.astro` (Instagram/redes)

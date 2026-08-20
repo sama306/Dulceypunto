@@ -5,6 +5,59 @@
 
 ---
 
+## Sesión — 2026-08-20 (15.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — item `About.astro` (sobre la marca) completado.
+
+**Hecho en esta sesión:**
+- Completado el item de Fase 3 **"`About.astro` (sobre la marca)"**:
+  - `src/components/About.astro`: sección `#sobre` (mantiene el id que espera el
+    scrollspy del Navbar) con header consistente con las demás secciones (eyebrow
+    Caveat "conocenos · hecho con amor 💕", H2 Fraunces "Sobre nosotros", sub Mulish
+    con datos reales) sobre gradiente crema (`from-background via-primary/25
+    to-background`).
+  - **Layout "2 columnas estilo Hero/Contacto"** (decisión del usuario): en desktop
+    `lg:grid-cols-[1.05fr_0.95fr]`, apilado en mobile. **Contenido elegido por el
+    usuario: descripción + tagline y chips de confianza** (sin chips de categorías
+    ni CTAs):
+    - **Columna izquierda (texto):** tagline real en destaque (Fraunces) «Detalles
+      dulces para regalar, sorprender o mimarte 💕», párrafo con datos reales
+      (emprendimiento de repostería 100% casera, qué se hace, pedidos por WhatsApp,
+      zona Burzaco, PBA), cierre "¡Hacemos todo con amor! 💕" en Caveat y chips de
+      confianza (100% casero · Pedidos por WhatsApp · Burzaco, PBA — patrón del Hero).
+    - **Columna derecha (visual):** collage con la **portada** (`portada-735x420.jpg`,
+      resuelta en la sesión 14) como imagen principal (rounded, ring surface, sombra),
+      el **logo circular** (`perfil-1024.jpg`) superpuesto abajo a la izquierda
+      (offset `-left-2` mobile / `-left-6` desktop para no cortar el ring contra el
+      borde) y el **sello Caveat flotante "hecho con amor"** arriba a la derecha
+      (patrón del Hero). Imágenes con `<img>` directo + `loading="lazy"`, alts
+      descriptivos.
+  - **Sin inventar nada:** solo datos confirmados de `02-INFO-PENDIENTE.md`; no se
+    agregaron historia, fundadores, años ni valores inventados.
+  - Animación de entrada CSS pura (fade-up escalonado con delays + flotado del sello,
+    keyframes `about-rise`/`about-float`, respeta `prefers-reduced-motion`).
+- `src/pages/index.astro`: el placeholder `#sobre` se reemplazó por `<About />`.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440 y
+  móvil 390 emulado): grid 2 columnas desktop / 1 columna apilada móvil, portada
+  proporcional (520×297 desktop / 343×196 móvil), logo circular y sello dentro de los
+  límites del viewport (logo a 8px del borde en móvil, sin cortar el ring), sin
+  overflow horizontal, **scrollspy del Navbar marca "Sobre nosotros" con
+  `aria-current`**, sin errores de consola, imágenes `portada-735x420` y `perfil-1024`
+  cargadas (HTTP 200).
+
+**Pendiente / próximo paso:**
+- Fase 3: siguientes items **`Benefits.astro`**, `CustomOrders.astro`,
+  `SocialSection.astro`, `Footer.astro`.
+- Cargar precios sigue postergado (los provee el dueño); no se tocó
+  `src/data/products.ts`.
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el dominio en
+  Fase 5), sitemap, robots.txt, alt text.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (14.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — primer item completado: `Layout.astro` base + SEO tags genéricos.
