@@ -1,8 +1,6 @@
 ---
-import ProductCard from './ProductCard.astro';
-import { products } from '../data/products';
-
-const featured = products.filter((product) => product.featured);
+import ProductFilter from './ProductFilter';
+import { products, categories } from '../data/products';
 ---
 
 <section
@@ -17,12 +15,12 @@ const featured = products.filter((product) => product.featured);
         Nuestros productos
       </h2>
       <p class="mt-3 text-lg leading-relaxed text-text-muted">
-        Hechos con amor en Burzaco, PBA. Escribinos y armamos tu pedido por WhatsApp.
+        Elegí una categoría o mirá todo: cada detalle se hace con amor en Burzaco, PBA. Escribinos y armamos tu pedido por WhatsApp.
       </p>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {featured.map((product) => <ProductCard product={product} />)}
+    <div class="mt-10">
+      <ProductFilter client:load products={products} categories={categories} />
     </div>
   </div>
 </section>

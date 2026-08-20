@@ -5,6 +5,58 @@
 
 ---
 
+## Sesión — 2026-08-19 (11.ª)
+
+**Fase actual:** Fase 2 (Diseño) — Sección de catálogo/filtros diseñada e implementada.
+
+**Hecho en esta sesión:**
+- Diseñada e implementada la **sección de catálogo con filtros por categoría**
+  (item Fase 2 "Diseñar sección de catálogo/filtros" + Fase 3
+  "`ProductCategories.astro` (filtro por categoría)"), reemplazando la anterior
+  `FeaturedProducts.astro` (un solo grid en `#productos`, sin grids duplicados):
+  - `src/components/ProductCard.tsx`: **convertido a React** (era `.astro`) porque
+    ahora vive dentro del island de filtros. Mismo diseño exacto (imagen
+    `aspect-4/3` con zoom hover, chip de categoría Caveat accent, nombre Fraunces,
+    descripción `line-clamp-3`, CTA "Ver detalle →" → `/productos/{slug}`). Sin
+    precio. `ProductCard.astro` eliminado.
+  - `src/components/ProductFilter.tsx` (isla React `client:load`, patrón
+    `MobileMenu`): pills "Todos" + las 5 categorías confirmadas con **conteo** por
+    categoría (6/1/2/1/1/1), `aria-pressed`, active con `bg-text text-surface`
+    (marrón oscuro de la paleta), contador de resultados en singular/plural
+    (`aria-live="polite"`), grid `1/2/3` columnas con `ProductCard` y **animación
+    fade-up escalonada** al cambiar de categoría (CSS keyframes + stagger por
+    índice, respeta `prefers-reduced-motion`). Empty state amigable por si una
+    categoría queda sin productos. Los pills reciben `categories` desde
+    `src/data/products.ts`.
+  - `src/components/ProductFilter.css`: keyframes `product-filter-rise` +
+    `.product-filter-item` + media query `prefers-reduced-motion`. Se importa
+    desde el island; el build lo inlinea en el HTML.
+  - `src/components/ProductCatalog.astro`: sección `#productos` con header
+    (eyebrow Caveat, H2 Fraunces, sub Mulish) y gradiente crema igual que antes,
+    renderizando `<ProductFilter client:load products categories />`.
+  - `src/pages/index.astro`: `<FeaturedProducts />` → `<ProductCatalog />`.
+    Eliminado `FeaturedProducts.astro` y `ProductCard.astro`.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440
+  y móvil 390 emulado): pills con conteos correctos, filtros funcionando
+  (Tartas → 1 producto, Cajitas/boxes → 2 productos, Todos → 6), contador
+  singular/plural correcto, sin errores de consola, sin overflow horizontal en
+  móvil ni desktop, animación aplicada y CSS (keyframes + reduced-motion)
+  presente en el build. Capturas: `D:\Temp\opencode\catalogo-desktop.png` y
+  `catalogo-movil.png`.
+
+**Pendiente / próximo paso:**
+- Fase 2: siguiente item **"Diseñar galería (bento/masonry)"**. Cargar precios
+  sigue postergado (los provee el dueño).
+- Detalle de producto (`[slug].astro`) es un scaffold mínimo; se completa en Fase 3.
+- Pendiente de sesiones anteriores: re-descargar la portada
+  (`portada-735x420.jpg`) que figura descargada en `02` pero no está en
+  `src/assets/logo/`.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-19 (10.ª)
 
 **Fase actual:** Fase 2 (Diseño) — Cards de producto diseñadas e implementadas.

@@ -31,7 +31,7 @@ fase entera en una sola sesión.
 - [x] Diseñar Navbar
 - [x] Diseñar Hero
 - [x] Diseñar cards de producto
-- [ ] Diseñar sección de catálogo/filtros
+- [x] Diseñar sección de catálogo/filtros
 - [ ] Diseñar galería (bento/masonry)
 - [ ] Diseñar sección de contacto
 
@@ -40,9 +40,9 @@ fase entera en una sola sesión.
 - [ ] `Layout.astro` base + SEO tags genéricos
 - [x] `Navbar.astro` (sticky, responsive, botón WhatsApp)
 - [x] `Hero.astro` (con animación de entrada)
-- [x] `FeaturedProducts.astro`
-- [ ] `ProductCard.astro` 
-- [ ] `ProductCategories.astro` (filtro por categoría)
+- [x] `FeaturedProducts.astro` (reemplazada por `ProductCatalog.astro` en la sesión 11)
+- [x] `ProductCard` (implementada como `.tsx` en la sesión 11 — vive dentro del island de filtros)
+- [x] `ProductCategories.astro` (filtro por categoría — implementado como `ProductCatalog.astro` + island `ProductFilter.tsx`)
 - [ ] `Gallery.astro` (lightbox al hacer click)
 - [ ] `About.astro` (sobre la marca)
 - [ ] `Benefits.astro` (por qué elegirnos)

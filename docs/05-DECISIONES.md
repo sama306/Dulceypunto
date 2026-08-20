@@ -5,6 +5,29 @@
 
 ---
 
+### 2026-08-19 — Sección de catálogo/filtros: diseño e implementación
+
+**Decisión:** la sección `#productos` pasa a ser un **catálogo filtrable** que
+reemplaza a `FeaturedProducts` (un solo grid, sin duplicar los 6 productos).
+Estructura: `ProductCatalog.astro` (sección con header y gradiente crema) +
+isla React `ProductFilter.tsx` (`client:load`) que recibe `products` y
+`categories` por props. Pills "Todos" + 5 categorías con **conteo** por categoría,
+`aria-pressed`, estado activo en `bg-text text-surface` (marrón oscuro de la
+paleta), contador de resultados en singular/plural con `aria-live="polite"` y
+**animación fade-up escalonada** al cambiar de categoría (CSS keyframes +
+stagger por índice, respeta `prefers-reduced-motion`). Empty state amigable por
+si una categoría queda sin productos. **`ProductCard` se convierte a React**
+(`ProductCard.tsx`, reemplaza al `.astro`) porque se renderiza dentro del island;
+mismo diseño exacto que antes, sin precio.
+**Razón:** los filtros son interactividad real → isla de React según la convención
+del proyecto; un solo grid evita redundancia visual; el card en React mantiene una
+sola fuente de verdad (sin duplicar markup en el island); los conteos y el estado
+activo ayudan a orientarse con un catálogo pequeño; la animación es CSS pura
+(convención) y accesible. El CSS de la animación se importa desde el island
+(`ProductFilter.css`) y el build lo inlinea en el HTML de la página.
+
+---
+
 ### 2026-08-19 — Cards de producto: diseño e implementación
 
 **Decisión:** la card de producto es un `<article>` presentacional que recibe un
