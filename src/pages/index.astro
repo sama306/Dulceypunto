@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import ProductCatalog from '../components/ProductCatalog.astro';
+import Gallery from '../components/Gallery.astro';
 ---
 
 <Layout
@@ -14,12 +15,7 @@ import ProductCatalog from '../components/ProductCatalog.astro';
     <Hero />
     <ProductCatalog />
 
-    <section id="galeria" aria-label="Galería" class="grid min-h-[70vh] place-items-center px-4">
-      <div class="text-center">
-        <h2 class="font-display text-3xl text-text">Galería</h2>
-        <p class="mt-2 font-hand text-2xl text-accent">Sección en construcción (Fase 3 del roadmap)</p>
-      </div>
-    </section>
+    <Gallery />
 
     <section id="sobre" aria-label="Sobre nosotros" class="grid min-h-[70vh] place-items-center bg-surface px-4">
       <div class="text-center">

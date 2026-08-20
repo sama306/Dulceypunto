@@ -5,6 +5,62 @@
 
 ---
 
+## Sesión — 2026-08-19 (12.ª)
+
+**Fase actual:** Fase 2 (Diseño) — Sección de galería diseñada e implementada.
+
+**Hecho en esta sesión:**
+- Diseñada e implementada la **sección de galería** (item Fase 2 "Diseñar galería
+  (bento/masonry)" + Fase 3 "`Gallery.astro` (lightbox al hacer click)"):
+  - `src/data/gallery.ts`: interface `GalleryImage` (`id`, `image:
+    ImageMetadata`, `alt`, `category`) + `galleryImages` con **15 de las 16
+    fotos** reales de `src/assets/products/` — **excluida `producto-11.jpg`**
+    (la pidió el usuario). Categorías según origen real de los posts
+    (`docs/02-INFO-PENDIENTE.md`): Tartas caseras, Box día del amigo, Opciones
+    día del amigo, Box para mates y Combos. Alts descriptivos de la foto (sin
+    inventar datos de marca).
+  - `src/components/Gallery.astro`: sección `#galeria` con header consistente
+    con `ProductCatalog` (eyebrow Caveat "hecho con amor", H2 Fraunces "Galería",
+    sub Mulish con datos reales) sobre gradiente crema, renderizando la isla.
+  - `src/components/GalleryGrid.tsx` (isla React `client:load`, patrón
+    `ProductFilter`): **masonry** con CSS columns (`columns-2` móvil →
+    `sm:columns-3` → `lg:columns-4`, items `break-inside-avoid`). Cada item es
+    `<button>` con `<img>` lazy, ring accent, zoom hover y overlay sutil con la
+    categoría en Caveat (hover desktop). **Lightbox**: modal `role="dialog"`
+    `aria-modal` con backdrop `bg-text/85` + blur, imagen grande, caption
+    (categoría en Caveat), contador "N de 15", botones cerrar/anterior/siguiente,
+    cierre con `Esc` y navegación `←`/`→`, lock del scroll del body, foco en el
+    botón cerrar al abrir y **retorno al foco** al cerrar, y **focus trap** con
+    Tab (cicla cerrar/anterior/siguiente). Animación de entrada fade-up
+    escalonada por índice (CSS keyframes) + `prefers-reduced-motion`.
+  - `src/components/GalleryGrid.css`: keyframes `gallery-rise` / `gallery-fade-in`
+    / `gallery-zoom-in` + reduced-motion. Se importa desde el island y el build lo
+    inlinea en el HTML de la página (verificado en `dist/index.html`).
+  - `src/pages/index.astro`: el placeholder `#galeria` se reemplazó por
+    `<Gallery />`.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop
+  1440 y móvil 390 emulado): masonry 4 columnas desktop / 2 móvil, **15 items**,
+  sin overflow horizontal, sin errores de consola; lightbox abre (foco en
+  cerrar), navegación prev/next (contador y caption correctos, wrap-around),
+  flechas `←`/`→` del teclado, focus trap con Tab/Shift+Tab, cierre con `Esc` con
+  retorno de foco al item disparador y restauración del scroll del body; el modal
+  entra en el viewport móvil (356×577 px). CSS (keyframes + reduced-motion)
+  presente en el build. Capturas: `D:\Temp\opencode\galeria-desktop.png` y
+  `galeria-movil.png`.
+
+**Pendiente / próximo paso:**
+- Fase 2: siguiente item **"Diseñar sección de contacto"**. Cargar precios sigue
+  postergado (los provee el dueño).
+- Detalle de producto (`[slug].astro`) es un scaffold mínimo; se completa en Fase 3.
+- Pendiente de sesiones anteriores: re-descargar la portada
+  (`portada-735x420.jpg`) que figura descargada en `02` pero no está en
+  `src/assets/logo/`.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-19 (11.ª)
 
 **Fase actual:** Fase 2 (Diseño) — Sección de catálogo/filtros diseñada e implementada.

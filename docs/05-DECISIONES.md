@@ -5,6 +5,33 @@
 
 ---
 
+### 2026-08-19 — Sección de galería: masonry + lightbox e implementación
+
+**Decisión:** la sección `#galeria` se diseña e implementa como **masonry** con
+CSS columns (`columns-2` móvil → `sm:columns-3` → `lg:columns-4`, items
+`break-inside-avoid`) usando las **15 de las 16 fotos** reales de
+`src/assets/products/` (**excluida `producto-11.jpg`**, decisión del usuario).
+Estructura: `src/data/gallery.ts` (interface `GalleryImage` con `image:
+ImageMetadata`, `alt` y `category`; categorías tomadas del origen real de cada
+post según `02-INFO-PENDIENTE.md`) + `Gallery.astro` (sección con header
+consistente con `ProductCatalog` y gradiente crema) + isla React
+`GalleryGrid.tsx` (`client:load`). Cada item es `<button>` con `<img>` lazy,
+ring accent, zoom hover y overlay con la categoría en Caveat (hover desktop).
+**Lightbox** al hacer click: modal `role="dialog"` `aria-modal="true"` con
+backdrop `bg-text/85` + blur, imagen grande + caption (categoría en Caveat) +
+contador "N de 15", cierre con `Esc` y botón, navegación `←`/`→` y
+anterior/siguiente con wrap-around, lock del scroll del body, foco en cerrar al
+abrir, **retorno de foco** al item disparador al cerrar y **focus trap** con Tab.
+Animación de entrada fade-up escalonada (CSS keyframes) + `prefers-reduced-motion`.
+**Razón:** el masonry respeta el formato vertical natural de las fotos y escala
+bien en responsive; se usa todo el material real disponible (15 fotos, sin la
+que pidió sacar el usuario) sin inventar datos (las categorías salen de los
+posts reales); el lightbox es la interacción requerida por el roadmap y se hace
+con isla React según la convención del proyecto, accesible (dialog aria-modal,
+focus trap, retorno de foco, lock de scroll) y con animación CSS pura.
+
+---
+
 ### 2026-08-19 — Sección de catálogo/filtros: diseño e implementación
 
 **Decisión:** la sección `#productos` pasa a ser un **catálogo filtrable** que
