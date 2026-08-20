@@ -5,6 +5,31 @@
 
 ---
 
+### 2026-08-20 — Pedidos personalizados: 2 columnas estilo Hero/About e implementación
+
+**Decisión:** la sección `#pedidos` se diseña e implementa en una sola sesión (patrón de
+las sesiones previas), con **layout "2 columnas estilo Hero/About"** (elegido por el
+usuario): en desktop `lg:grid-cols-[1.05fr_0.95fr]`, apilado en mobile, ubicada
+**después del catálogo** (`#productos`) y antes de la galería. Se agrega el link
+**"Pedidos"** (`#pedidos`) al Navbar entre "Productos" y "Galería" (scrollspy
+automático). Columna izquierda = frase destaque Fraunces, párrafo con solo datos reales
+(los pedidos personalizados existen ✅; cómo funcionan exactamente queda a cargo del
+dueño), CTA pill verde WhatsApp vía `waLink()` con mensaje específico de pedido
+personalizado y chips de ocasiones reales (Cajitas personalizadas · Boxes por ocasión ·
+**Día del amigo** — única ocasión confirmada por posts reales, sin inventar otras).
+Columna derecha = foto real **`producto-07.jpg`** (box día del amigo, no usada en cards)
+enmarcada + sello Caveat flotante **"a tu gusto"** (patrón Hero/About). Animación de
+entrada CSS pura (fade-up escalonado + flotado del sello) con `prefers-reduced-motion`.
+**Sin precios** (postergados). **No se inventa un proceso** (pasos, plazos, mínimos,
+ocasiones): solo datos confirmados de `02-INFO-PENDIENTE.md` y lenguaje ya inferido de
+posts reales en la sesión 10.
+**Razón:** cumple el item del roadmap con la identidad visual del sitio, convierte el
+material real disponible en una sección de conversión (WhatsApp es el canal de pedido),
+refuerza la categoría confirmada de cajitas/boxes personalizados y respeta la regla de
+no inventar datos de marca. Sección `.astro` sin isla (no hay interactividad real).
+
+---
+
 ### 2026-08-20 — Sección "Sobre nosotros": 2 columnas estilo Hero/Contacto e implementación
 
 **Decisión:** la sección `#sobre` se diseña e implementa en una sola sesión (patrón de

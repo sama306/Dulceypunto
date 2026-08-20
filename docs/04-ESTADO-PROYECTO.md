@@ -5,6 +5,63 @@
 
 ---
 
+## Sesión — 2026-08-20 (16.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — item `CustomOrders.astro` (pedidos personalizados) completado.
+
+**Hecho en esta sesión:**
+- Completado el item de Fase 3 **"`CustomOrders.astro` (pedidos personalizados)"**:
+  - `src/components/CustomOrders.astro`: sección `#pedidos` (id que espera el nuevo link
+    del Navbar) con header consistente (eyebrow Caveat "armamos tu idea · pedidos
+    personalizados 💕", H2 Fraunces "Pedidos personalizados", sub Mulish con datos reales)
+    sobre gradiente crema (`from-background via-primary/25 to-background`, patrón de
+    About/Contacto).
+  - **Layout "2 columnas estilo Hero/About"** (decisión del usuario): en desktop
+    `lg:grid-cols-[1.05fr_0.95fr]`, apilado en mobile. **Contenido con solo datos
+    reales** (los pedidos personalizados existen ✅ en `02-INFO-PENDIENTE.md`; cómo
+    funcionan exactamente sigue a cargo del dueño, así que **no se inventó un proceso de
+    pasos/plazos/mínimos**):
+    - **Columna izquierda (texto):** frase destaque Fraunces «Cajitas personalizadas,
+      armadas a tu gusto para la ocasión que quieras 💕», párrafo con datos reales (se
+      arman cajitas/boxes personalizados a tu gusto — lenguaje ya inferido de posts
+      reales en sesión 10 —, se pide por WhatsApp, Burzaco PBA), **CTA pill verde
+      WhatsApp** vía `waLink('...Quiero armar un pedido personalizado 💕')` ("Armar mi
+      pedido") y **chips de ocasiones reales** (Cajitas personalizadas · Boxes por
+      ocasión · Día del amigo — única ocasión confirmada por posts reales; no se
+      inventaron otras).
+    - **Columna derecha (visual):** foto real **`producto-07.jpg`** (box día del amigo,
+      no usada en cards) enmarcada (rounded `1.75rem`, `ring-4 ring-surface`, sombra) y
+      **sello Caveat flotante "a tu gusto"** arriba a la derecha (patrón Hero/About).
+      Imagen con `<img>` directo + `loading="lazy"`, alt descriptivo.
+  - Animación de entrada CSS pura (fade-up escalonado con delays + flotado del sello,
+    keyframes `custom-rise`/`custom-float`, respeta `prefers-reduced-motion`).
+- `src/pages/index.astro`: `<CustomOrders />` insertado **entre `<ProductCatalog />` y
+  `<Gallery />`** (decisión del usuario: después del catálogo).
+- `src/components/Navbar.astro`: agregado link **"Pedidos"** (`#pedidos`) entre
+  "Productos" y "Galería" (el scrollspy con `data-nav` y `aria-current` lo toma solo;
+  `MobileMenu` recibe los mismos `links`).
+- Sin precios: no se tocó `src/data/products.ts` ni se mostró ningún valor.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440 y
+  móvil 390 emulado): grid 2 columnas desktop (575/521 px) / 1 columna apilada móvil
+  (343 px), foto `producto-07` cargada (1179×1432) y proporcional (343×417 móvil), 3
+  chips, link `wa.me/5491165159776?text=...Quiero%20armar%20un%20pedido...` correcto,
+  sello con animación `custom-float`, **scrollspy del Navbar marca "Pedidos" con
+  `aria-current`**, sin overflow horizontal, sin errores de consola. CSS (keyframes +
+  reduced-motion) presente en `dist/index.html`. Capturas: `D:\Temp\opencode\pedidos-desktop.png`
+  y `pedidos-movil.png`.
+
+**Pendiente / próximo paso:**
+- Fase 3: siguientes items **`Benefits.astro`**, `SocialSection.astro`, `Footer.astro`.
+- Cargar precios sigue postergado (los provee el dueño); no se tocó
+  `src/data/products.ts`.
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el dominio en
+  Fase 5), sitemap, robots.txt, alt text.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (15.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — item `About.astro` (sobre la marca) completado.
