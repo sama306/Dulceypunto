@@ -47,7 +47,7 @@ fase entera en una sola sesión.
 - [x] `About.astro` (sobre la marca)
 - [x] `CustomOrders.astro` (pedidos personalizados)
 - [x] `Contact.astro`
-- [ ] `Footer.astro`
+- [x] `Footer.astro`
 - [ ] Carga de productos desde `src/data/products.ts`
 - [ ] Integración de botones WhatsApp (deep link `wa.me`)
 - [ ] Responsive completo (mobile-first)

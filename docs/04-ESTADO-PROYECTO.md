@@ -5,6 +5,56 @@
 
 ---
 
+## Sesión — 2026-08-20 (17.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — item `Footer.astro` completado.
+
+**Hecho en esta sesión:**
+- Completado el item de Fase 3 **"`Footer.astro`"**:
+  - `src/components/Footer.astro`: pie de página (`<footer aria-label="Pie de página">`)
+    sobre **fondo crema suave** (`bg-background`, decisión del usuario) con borde superior
+    en acento (`border-t border-accent/15`), sin gradiente ni sección de header (a
+    diferencia del resto de secciones, es el cierre de la página).
+  - **Layout 3 columnas en desktop** (`lg:grid-cols-3`, apilado en móvil) — decisión del
+    usuario **"Marca + Navegación + Contacto"**:
+    - **Columna Marca:** logo circular (`perfil-1024.jpg`, patrón Navbar) + wordmark
+      "Dulce & Punto" Fraunces + acento Caveat "hecho con amor" + tagline real de
+      `siteConfig` ("Detalles dulces para regalar, sorprender o mimarte 💕 — Desayunos,
+      meriendas y cajitas personalizadas. ¡Hacemos todo con amor!").
+    - **Columna Navegación** (`<nav aria-label="Navegación del pie de página">`): los
+      mismos anchors del Navbar (Inicio, Productos, Pedidos, Galería, Sobre nosotros,
+      Contacto) con hover accent y `focus-visible`.
+    - **Columna Contacto:** teléfono `011 6515-9776` como link `tel:+5491165159776` con
+      icono, chip "Burzaco, PBA" y **3 iconos de redes** (Instagram, TikTok, Facebook)
+      circulares con `aria-label` + `title` (handle real) y hover `-translate-y-0.5`.
+      Iconos SVG inline, sin librerías (patrón Contact).
+  - **Barra inferior:** `© {año actual} Dulce & Punto` (año generado con
+    `new Date().getFullYear()`) + cierre Caveat "hecho con amor 💕". En desktop queda en
+    fila (`sm:flex-row`), en móvil apilada.
+  - **Sin datos no confirmados:** no horario (decisión previa), no métodos de pago, no
+    detalle de zonas de entrega. Sin precios: no se tocó `src/data/products.ts`.
+- `src/pages/index.astro`: `<Footer />` agregado **después de `</main>`** (cierre del
+  `Layout`), import nuevo.
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440 y móvil
+  390 emulado): **3 columnas desktop** (346 px c/u) / **1 columna apilada móvil** (343 px),
+  barra inferior en fila desktop / columna móvil, **sin overflow horizontal**, sin errores
+  de consola, links correctos (`#inicio`…`#contacto`, `tel:+5491165159776`, Instagram,
+  TikTok, Facebook), `© 2026 Dulce & Punto`, 3 iconos de redes. Footer presente en
+  `dist/index.html`. Capturas: `D:\Temp\opencode\footer-desktop.png` y `footer-movil.png`.
+
+**Pendiente / próximo paso:**
+- Fase 3: siguientes items **`Benefits.astro`**, **`SocialSection.astro`**, carga de
+  productos desde `src/data/products.ts`, integración de botones WhatsApp, responsive,
+  animaciones, optimización de imágenes.
+- Cargar precios sigue postergado (los provee el dueño); no se tocó `src/data/products.ts`.
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el dominio en
+  Fase 5), sitemap, robots.txt, alt text.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (16.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — item `CustomOrders.astro` (pedidos personalizados) completado.

@@ -5,6 +5,29 @@
 
 ---
 
+### 2026-08-20 — Footer: fondo crema + 3 columnas (Marca · Navegación · Contacto)
+
+**Decisión:** el `Footer.astro` se diseña e implementa en una sola sesión (patrón de las
+sesiones previas). **Fondo crema suave** (`bg-background`, elegido por el usuario) con
+borde superior en acento, manteniendo la uniformidad visual de la landing (a diferencia
+de las demás secciones no usa gradiente ni header: es el cierre de la página). **Layout 3
+columnas en desktop** (`lg:grid-cols-3`, apilado en móvil), elegido por el usuario
+**"Marca + Navegación + Contacto"**: columna marca = logo circular (`perfil-1024.jpg`,
+patrón Navbar) + wordmark Fraunces + acento Caveat "hecho con amor" + tagline real;
+columna navegación = los mismos anchors del Navbar (Inicio, Productos, Pedidos, Galería,
+Sobre nosotros, Contacto); columna contacto = teléfono `011 6515-9776` como link `tel:`,
+chip "Burzaco, PBA" y 3 iconos circulares de redes (Instagram, TikTok, Facebook) con
+`aria-label` + `title`. **Barra inferior:** `© {año actual} Dulce & Punto` + cierre Caveat
+"hecho con amor 💕". Se renderiza **fuera de `<main>`** (después de `</main>`).
+**No se publican** horario (decisión previa), métodos de pago ni detalle de zonas de
+entrega. Sin precios (postergados).
+**Razón:** cierra la página con la identidad real del sitio (paleta crema/rosa, Fraunces +
+Caveat), repite los datos de conversión ya confirmados y respeta la regla de no inventar
+datos. El año del copyright se genera dinámicamente (no hardcodeado). Sección `.astro` sin
+isla (no hay interactividad real, como el resto de secciones presentacionales).
+
+---
+
 ### 2026-08-20 — Pedidos personalizados: 2 columnas estilo Hero/About e implementación
 
 **Decisión:** la sección `#pedidos` se diseña e implementa en una sola sesión (patrón de
