@@ -45,7 +45,6 @@ fase entera en una sola sesión.
 - [x] `ProductCategories.astro` (filtro por categoría — implementado como `ProductCatalog.astro` + island `ProductFilter.tsx`)
 - [x] `Gallery.astro` (lightbox al hacer click)
 - [x] `About.astro` (sobre la marca)
-- [ ] `Benefits.astro` (por qué elegirnos)
 - [ ] `CustomOrders.astro` (pedidos personalizados)
 - [ ] `SocialSection.astro` (Instagram/redes)
 - [x] `Contact.astro`
