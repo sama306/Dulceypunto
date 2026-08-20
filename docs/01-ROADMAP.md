@@ -48,7 +48,8 @@ fase entera en una sola sesión.
 - [ ] `Benefits.astro` (por qué elegirnos)
 - [ ] `CustomOrders.astro` (pedidos personalizados)
 - [ ] `SocialSection.astro` (Instagram/redes)
-- [ ] `Contact.astro` + `Footer.astro`
+- [x] `Contact.astro`
+- [ ] `Footer.astro`
 - [ ] Carga de productos desde `src/data/products.ts`
 - [ ] Integración de botones WhatsApp (deep link `wa.me`)
 - [ ] Responsive completo (mobile-first)
