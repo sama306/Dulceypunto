@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import FeaturedProducts from '../components/FeaturedProducts.astro';
 ---
 
 <Layout
@@ -11,13 +12,7 @@ import Hero from '../components/Hero.astro';
   <Navbar />
   <main>
     <Hero />
-
-    <section id="productos" aria-label="Productos" class="grid min-h-[70vh] place-items-center bg-surface px-4">
-      <div class="text-center">
-        <h2 class="font-display text-3xl text-text">Productos</h2>
-        <p class="mt-2 font-hand text-2xl text-accent">Sección en construcción (Fase 3 del roadmap)</p>
-      </div>
-    </section>
+    <FeaturedProducts />
 
     <section id="galeria" aria-label="Galería" class="grid min-h-[70vh] place-items-center px-4">
       <div class="text-center">

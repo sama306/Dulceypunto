@@ -1,0 +1,28 @@
+---
+import ProductCard from './ProductCard.astro';
+import { products } from '../data/products';
+
+const featured = products.filter((product) => product.featured);
+---
+
+<section
+  id="productos"
+  aria-label="Productos"
+  class="bg-gradient-to-b from-background via-secondary/20 to-background px-4 py-16 sm:px-6 lg:py-24"
+>
+  <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="font-hand text-2xl text-accent">repostería 100% casera</p>
+      <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight text-text sm:text-4xl">
+        Nuestros productos
+      </h2>
+      <p class="mt-3 text-lg leading-relaxed text-text-muted">
+        Hechos con amor en Burzaco, PBA. Escribinos y armamos tu pedido por WhatsApp.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {featured.map((product) => <ProductCard product={product} />)}
+    </div>
+  </div>
+</section>

@@ -43,10 +43,10 @@ crema/rosa empolvado y marrón cálido apagado:
 |---|---|---|
 | Fotografías originales | ✅ Confirmado | 16 fotos descargadas de Facebook → `src/assets/products/` |
 | Categorías de productos | ✅ Confirmado | Tartas caseras, cajitas/boxes personalizados, desayunos y meriendas, combos para mate, cajitas por ocasión (ej. día del amigo) |
-| Catálogo detallado | 🟡 Parcial | Se infiere de fotos/posts; falta lista oficial |
+| Catálogo detallado | 🟡 Parcial | Se infiere de fotos/posts; **6 productos cargados en `src/data/products.ts`** (sin precios). Falta lista oficial |
 | Precios | ❌ Falta | Facebook dice *"consultar precios"*. Los carga el dueño. |
 | Descripciones por producto | 🟡 Parcial | Solo textos de posts (ver abajo) |
-| Productos destacados | 🟡 Parcial | Candidatos: tartas 100 % caseras y box para mates |
+| Productos destacados | 🟡 Parcial | Candidatos: tartas 100 % caseras y box para mates. **Los 6 productos cargados están marcados `featured`** para la sección de la home; ajustar cuando esté la lista oficial |
 | Métodos de pago | ❌ Falta | Lo carga el dueño |
 | Promociones | ❌ Falta | Solo posteos puntuales (día del amigo); no hay promos permanentes |
 

@@ -30,7 +30,7 @@ fase entera en una sola sesión.
 - [x] Definir combinación tipográfica (título + texto)
 - [x] Diseñar Navbar
 - [x] Diseñar Hero
-- [ ] Diseñar cards de producto
+- [x] Diseñar cards de producto
 - [ ] Diseñar sección de catálogo/filtros
 - [ ] Diseñar galería (bento/masonry)
 - [ ] Diseñar sección de contacto
@@ -40,7 +40,8 @@ fase entera en una sola sesión.
 - [ ] `Layout.astro` base + SEO tags genéricos
 - [x] `Navbar.astro` (sticky, responsive, botón WhatsApp)
 - [x] `Hero.astro` (con animación de entrada)
-- [ ] `FeaturedProducts.astro` + `ProductCard.astro`
+- [x] `FeaturedProducts.astro`
+- [ ] `ProductCard.astro` 
 - [ ] `ProductCategories.astro` (filtro por categoría)
 - [ ] `Gallery.astro` (lightbox al hacer click)
 - [ ] `About.astro` (sobre la marca)

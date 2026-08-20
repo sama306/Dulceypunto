@@ -5,6 +5,45 @@
 
 ---
 
+### 2026-08-19 — Cards de producto: diseño e implementación
+
+**Decisión:** la card de producto es un `<article>` presentacional que recibe un
+`Product`. Composición: imagen arriba (`aspect-4/3`, `object-cover`, zoom sutil en
+hover, `loading="lazy"`), chip de categoría en Caveat (accent), nombre en Fraunces,
+descripción muted con `line-clamp-3` y CTA **"Ver detalle →"** que enlaza a
+`/productos/{slug}`. Estética consistente con Hero/Navbar (surface, esquinas
+1.5rem, ring acento sutil, sombra suave, hover `-translate-y-1`). **No se muestra
+precio** (los precios están postergados). La imagen es `<img>` directo (sharp sin
+instalar, igual que Navbar/Hero).
+**Razón:** la acción principal elegida por el cliente es el enlace a la página de
+detalle (no el WhatsApp directo por card); el card anticipa ese detalle y mantiene
+la identidad visual del sitio. La descripción recorta con `line-clamp` para grids
+parejos.
+
+### 2026-08-19 — Página de detalle `productos/[slug].astro` (scaffold mínimo)
+
+**Decisión:** se crea `src/pages/productos/[slug].astro` como **scaffold mínimo**
+para que los links de las cards no queden muertos: `getStaticPaths` con los
+productos cargados, imagen, categoría, nombre, descripción, CTA WhatsApp
+(`waLink()` con mensaje por producto) y "Volver a productos" → `/#productos`.
+Incluye `Navbar` para navegación.
+**Razón:** el enlace a detalle es la acción principal elegida por el cliente; la
+página completa (galería del producto, más información) se termina en Fase 3.
+
+### 2026-08-19 — Carga parcial del catálogo en `products.ts`
+
+**Decisión:** se cargan **6 productos reales** en `src/data/products.ts` (fotos
+reales + categorías confirmadas; nombres y descripciones **inferidos de posts
+reales** de Facebook, sin precios) para alimentar las cards. Se agrega el campo
+`slug: string` a la interfaz `Product` y `image` pasa de `string` a
+`ImageMetadata` (imports directos desde `src/assets/products/`, igual que el Hero).
+El catálogo queda marcado como **parcial** en el archivo y en `02-INFO-PENDIENTE.md`.
+**Razón:** sin datos las cards no se pueden demostrar; se usa solo material real
+(fotos/categorías confirmadas + textos de posts) sin inventar, y el estado
+"parcial" queda documentado. Precios siguen postergados.
+
+---
+
 ### 2026-08-14 — Hero: diseño "Vitrina dulce" e implementación
 
 **Decisión:** hero de 2 columnas en desktop (texto a la izquierda, collage de fotos

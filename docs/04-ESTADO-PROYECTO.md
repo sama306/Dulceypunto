@@ -5,6 +5,51 @@
 
 ---
 
+## Sesión — 2026-08-19 (10.ª)
+
+**Fase actual:** Fase 2 (Diseño) — Cards de producto diseñadas e implementadas.
+
+**Hecho en esta sesión:**
+- Diseñadas e implementadas las **cards de producto** (item Fase 2 "Diseñar cards de
+  producto" + Fase 3 `ProductCard.astro` + `FeaturedProducts.astro`):
+  - `src/components/ProductCard.astro`: card presentacional (recibe `Product`) con
+    imagen arriba (`aspect-4/3`, `object-cover`, zoom suave en hover), chip de
+    categoría en Caveat (accent), nombre en Fraunces, descripción muted con
+    `line-clamp-3` y CTA **"Ver detalle →"** que enlaza a `/productos/{slug}`.
+    Estética consistente con Hero/Navbar (surface, esquinas 1.5rem, ring acento
+    sutil, sombra suave, hover `-translate-y-1`). `<img>` directo con
+    `loading="lazy"` (sharp sigue sin instalarse). Sin precio visible.
+  - `src/components/FeaturedProducts.astro`: sección `#productos` con eyebrow
+    Caveat, heading Fraunces y grid responsive (`1/2/3` columnas) de cards
+    destacadas (`featured`). Reemplaza el placeholder "en construcción" en
+    `index.astro`. **No** incluye filtros (item aparte del roadmap).
+  - `src/pages/productos/[slug].astro` (scaffold mínimo para que los links no
+    queden muertos): `getStaticPaths` con los 6 productos, imagen, categoría,
+    nombre, descripción, CTA WhatsApp vía `waLink()` (mensaje por producto) y
+    "Volver a productos" → `/#productos`. Se completa en Fase 3.
+- `src/data/products.ts`: se agregó el campo `slug: string` y se cargaron **6
+  productos reales** (fotos reales + categorías confirmadas, nombres/descripciones
+  **inferidos de posts reales**, sin precio). Catálogo marcado como **parcial** en
+  el archivo y en `02-INFO-PENDIENTE.md`. El campo `image` pasó a ser
+  `ImageMetadata` (imports directos de `src/assets/products/`, igual que el Hero).
+- Verificado: `pnpm build` correcto (7 páginas: index + 6 productos). Check en
+  navegador (desktop y móvil): grid de 6 cards, hover, click → página de detalle
+  correspondiente, sin errores de consola, sin overflow horizontal.
+
+**Pendiente / próximo paso:**
+- Fase 2: siguiente item **"Diseñar sección de catálogo/filtros"**. Cargar precios
+  sigue postergado (los provee el dueño).
+- Detalle de producto (`[slug].astro`) es un scaffold mínimo; se completa en Fase 3
+  (galería de fotos del producto, más info, etc.).
+- Pendiente de sesiones anteriores: re-descargar la portada
+  (`portada-735x420.jpg`) que figura descargada en `02` pero no está en
+  `src/assets/logo/`.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-14 (9.ª)
 
 **Fase actual:** Fase 2 (Diseño) — Hero diseñado e implementado.
