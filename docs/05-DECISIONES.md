@@ -5,6 +5,19 @@
 
 ---
 
+### 2026-08-19 — Lightbox: altura de imagen con límite de viewport (fix)
+
+**Decisión:** la `<img>` del lightbox usa `h-auto w-auto max-w-full
+max-h-[calc(92svh-8rem)] object-contain` en vez de `max-h-full max-w-full`.
+**Razón:** `max-h-full` (porcentaje contra el área `flex-1`, que no tiene altura
+definida porque el diálogo es `max-h-[92svh]` sin altura fija) no se resuelve en
+Chrome → las fotos muy verticales (aspecto 9:16, ej. `producto-13`) conservaban
+su altura natural y el diálogo las recortaba con `overflow-hidden`. El límite de
+viewport es explícito e independiente del layout flex, y el `8rem` despeja el
+header + footer del modal. La grilla masonry no estaba afectada (altura auto).
+
+---
+
 ### 2026-08-19 — Sección de galería: masonry + lightbox e implementación
 
 **Decisión:** la sección `#galeria` se diseña e implementa como **masonry** con

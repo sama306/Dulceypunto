@@ -38,6 +38,16 @@
     inlinea en el HTML de la página (verificado en `dist/index.html`).
   - `src/pages/index.astro`: el placeholder `#galeria` se reemplazó por
     `<Gallery />`.
+- **Fix post-verificación:** las fotos muy verticales (aspecto 9:16, ej.
+  `producto-13` 1152×2048) se recortaban arriba/abajo en el lightbox: la `<img>`
+  del modal usaba `max-h-full` (porcentaje contra el área `flex-1` sin altura
+  definida), Chrome no lo resolvía y el diálogo cortaba con `overflow-hidden`
+  (medido: imagen 699×1242 contra diálogo de 795 px). Se cambió a un límite
+  explícito de viewport independiente del flex: `h-auto w-auto max-w-full
+  max-h-[calc(92svh-8rem)] object-contain`. Verificado en build: foto de Combos
+  entra completa en desktop 1440×900 (672×378 px dentro del diálogo) y en móvil
+  390×844 (570×321 px), sin overflow (`scrollHeight === clientHeight`). La
+  grilla masonry ya mostraba las fotos completas (altura auto).
 - Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop
   1440 y móvil 390 emulado): masonry 4 columnas desktop / 2 móvil, **15 items**,
   sin overflow horizontal, sin errores de consola; lightbox abre (foco en

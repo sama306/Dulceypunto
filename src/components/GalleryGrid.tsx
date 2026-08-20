@@ -182,7 +182,7 @@ export default function GalleryGrid({ images }: Props) {
                 alt={current.alt}
                 width={current.image.width}
                 height={current.image.height}
-                className="max-h-full max-w-full rounded-xl object-contain shadow-lg shadow-text/10"
+                className="h-auto max-h-[calc(92svh-8rem)] w-auto max-w-full rounded-xl object-contain shadow-lg shadow-text/10"
               />
 
               <button
