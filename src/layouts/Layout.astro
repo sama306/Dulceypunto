@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/animations.css';
 import { siteConfig } from '../data/site';
 
 interface Props {
@@ -37,5 +38,8 @@ const canonicalURL = Astro.site
 	</head>
 	<body>
 		<slot />
+		<script>
+			import '../scripts/scroll-reveal.ts';
+		</script>
 	</body>
 </html>

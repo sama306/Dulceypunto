@@ -51,7 +51,7 @@ fase entera en una sola sesión.
 - [x] Carga de productos desde `src/data/products.ts`
 - [x] Integración de botones WhatsApp (deep link `wa.me`)
 - [x] Responsive completo (mobile-first)
-- [ ] Animaciones (fade/scroll/hover) sin afectar performance
+- [x] Animaciones (fade/scroll/hover) sin afectar performance
 - [ ] Optimización de imágenes (Astro Image, WebP/AVIF, lazy loading)
 
 ## Fase 4 — SEO y rendimiento

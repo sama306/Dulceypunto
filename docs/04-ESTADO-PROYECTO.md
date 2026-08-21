@@ -5,6 +5,33 @@
 
 ---
 
+## Sesión — 2026-08-21 (19.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — item "Animaciones" completado.
+
+**Hecho en esta sesión:**
+- Implementado el sistema de **animaciones scroll-triggered** (fade/scroll/hover) sin afectar performance:
+  - **`src/styles/animations.css`** (nuevo): keyframes reutilizables (`fade-up`, `fade-in`, `scale-in`, `float`) + clases `.reveal` / `.revealed` + delays `.reveal-delay-{1..5}` + `prefers-reduced-motion`.
+  - **`src/scripts/scroll-reveal.ts`** (nuevo): IntersectionObserver global (una sola instancia, `threshold: 0.15`) que observe `.reveal` y togglee `.revealed` al entrar en viewport. `unobserve` después de revelar. Re-inicializa en `astro:page-load`.
+  - **`src/layouts/Layout.astro`**: importa `animations.css` + `<script>` de `scroll-reveal.ts`.
+  - **About.astro y CustomOrders.astro**: reemplazadas animaciones CSS on-load (`about-reveal`/`custom-reveal` + keyframes locales) por clases `.reveal` + delays compartidos. Eliminados bloques `<style>` locales (~60 líneas cada uno). Float badges usan `.animate-float` compartido.
+  - **Contact.astro, Footer.astro, ProductCatalog.astro, Gallery.astro**: agregadas clases `.reveal` / `.reveal-delay-*` (estas secciones no tenían animación de entrada).
+  - **GalleryGrid.css y ProductFilter.css**: keyframes locales (`gallery-rise`, `product-filter-rise`) reemplazados por reutilización del `fade-up` global.
+  - **MobileMenu.tsx**: agregado respeto a `prefers-reduced-motion` (state + `matchMedia`, condiciona la clase `transition` del panel).
+  - **Hero.astro**: sin cambios (mantiene animación de carga original, above-the-fold).
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 3): "Animaciones (fade/scroll/hover) sin afectar performance".
+- Verificado: `pnpm build` correcto (7 páginas). Check en navegador (desktop 1440 / móvil 390): 15 elementos `.reveal` presentes, scroll-reveal funcionando (8 revelados al llegar al fondo), Hero sin cambios, hover effects intactos, sin errores de consola, sin overflow horizontal.
+
+**Pendiente / próximo paso:**
+- Fase 3: último item — **Optimización de imágenes** (Astro Image, WebP/AVIF, lazy loading; sharp no está instalado, se usa `<img>` directo con `loading="lazy"`).
+- Cargar precios sigue postergado (los provee el dueño).
+- Fase 4 pendiente: Open Graph, Schema.org, canonical (cuando se defina el dominio en Fase 5), sitemap, robots.txt, alt text.
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-20 (18.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — marcados como completados 3 items que ya estaban implementados.

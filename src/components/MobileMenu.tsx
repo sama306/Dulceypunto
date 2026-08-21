@@ -20,6 +20,17 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function MobileMenu({ links, ctaHref }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    function onChange(e: MediaQueryListEvent) {
+      setReducedMotion(e.matches);
+    }
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -56,7 +67,9 @@ export default function MobileMenu({ links, ctaHref }: MobileMenuProps) {
 
       <div
         id="mobile-menu"
-        className={`absolute inset-x-0 top-full origin-top border-b border-primary bg-surface/95 shadow-lg shadow-text/10 backdrop-blur-md transition duration-200 ease-out ${
+        className={`absolute inset-x-0 top-full origin-top border-b border-primary bg-surface/95 shadow-lg shadow-text/10 backdrop-blur-md ${
+          reducedMotion ? '' : 'transition duration-200 ease-out'
+        } ${
           open ? 'visible scale-y-100 opacity-100' : 'invisible scale-y-95 opacity-0'
         }`}
       >

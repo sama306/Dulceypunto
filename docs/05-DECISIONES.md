@@ -5,6 +5,13 @@
 
 ---
 
+### 2026-08-21 — Animaciones scroll-triggered: CSS puro + IntersectionObserver global
+
+**Decisión:** se implementan las animaciones fade/scroll/hover con **CSS puro + IntersectionObserver global** (sin librerías externas). Estructura: `src/styles/animations.css` (keyframes reutilizables + clases `.reveal`/`.revealed` + delays + `prefers-reduced-motion`) + `src/scripts/scroll-reveal.ts` (un solo `IntersectionObserver` con `threshold: 0.15`, `unobserve` después de revelar, re-init en `astro:page-load`). Se importan en `Layout.astro`. Hero mantiene animación de carga original (above-the-fold). About y CustomOrders migran de keyframes locales a clases compartidas. Contact, Footer, ProductCatalog y Gallery ganan animación de entrada por primera vez. GalleryGrid y ProductFilter reutilizan `fade-up` global en vez de duplicar keyframes. MobileMenu.tsx agrega respeto a `prefers-reduced-motion` via `matchMedia`.
+**Razón:** CSS puro + IntersectionObserver es el enfoque más liviano (sin JS pesado, sin librerías), cumple el requisito de "sin afectar performance" del roadmap, y un solo observer para toda la página es más eficiente que uno por componente. El `unobserve` evita overhead después de la primera revelación. Hero se mantiene como animación de carga porque es above-the-fold.
+
+---
+
 ### 2026-08-20 — Footer: fondo crema + 3 columnas (Marca · Navegación · Contacto)
 
 **Decisión:** el `Footer.astro` se diseña e implementa en una sola sesión (patrón de las

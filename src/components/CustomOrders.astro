@@ -23,16 +23,16 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
 
     <div class="mt-10 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
       <div>
-        <p class="custom-reveal custom-delay-1 font-display text-2xl font-medium leading-snug tracking-tight text-text sm:text-[1.65rem]">
+        <p class="reveal reveal-delay-1 font-display text-2xl font-medium leading-snug tracking-tight text-text sm:text-[1.65rem]">
           «Cajitas personalizadas, armadas a tu gusto para la ocasión que quieras 💕»
         </p>
 
-        <p class="custom-reveal custom-delay-2 mt-5 text-lg leading-relaxed text-text-muted">
+        <p class="reveal reveal-delay-2 mt-5 text-lg leading-relaxed text-text-muted">
           En {siteConfig.name} armamos cajitas y boxes personalizados: elegís los dulces y los detalles,
           y lo hacemos realidad con todo el amor. Se pide por WhatsApp y llega a la zona de Burzaco, PBA.
         </p>
 
-        <div class="custom-reveal custom-delay-3 mt-8 flex flex-col items-start gap-4">
+        <div class="reveal reveal-delay-3 mt-8 flex flex-col items-start gap-4">
           <a
             href={ctaHref}
             target="_blank"
@@ -46,7 +46,7 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
           </a>
         </div>
 
-        <ul class="custom-reveal custom-delay-4 mt-8 flex flex-wrap items-center gap-2.5">
+        <ul class="reveal reveal-delay-4 mt-8 flex flex-wrap items-center gap-2.5">
           <li class="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-surface/70 px-3.5 py-1.5 text-sm font-medium text-text/80 backdrop-blur-sm">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="h-4 w-4 text-accent" aria-hidden="true">
               <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1 0-1.95-.16-2.83-.47L4 21l1.47-3.67A8.38 8.38 0 1 1 21 11.5z" />
@@ -72,7 +72,7 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
         </ul>
       </div>
 
-      <div class="custom-reveal custom-delay-2 relative mx-auto mt-2 w-full max-w-md lg:mt-0 lg:max-w-none">
+      <div class="reveal reveal-delay-2 relative mx-auto mt-2 w-full max-w-md lg:mt-0 lg:max-w-none">
         <figure class="overflow-hidden rounded-[1.75rem] shadow-xl shadow-text/15 ring-4 ring-surface">
           <img
             src={customBox.src}
@@ -86,7 +86,7 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
         </figure>
 
         <div class="absolute -top-5 right-2 lg:-top-7 lg:right-0">
-          <div class="custom-float">
+          <div class="animate-float">
             <div class="flex h-24 w-24 -rotate-12 items-center justify-center rounded-full bg-secondary text-center shadow-lg shadow-text/15 ring-2 ring-white lg:h-28 lg:w-28">
               <span class="font-hand text-[1.35rem] leading-tight text-text">a tu<br />gusto</span>
             </div>
@@ -97,61 +97,3 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
   </div>
 </section>
 
-<style>
-  @keyframes custom-rise {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes custom-float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .custom-reveal {
-    opacity: 0;
-    animation: custom-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  .custom-delay-1 {
-    animation-delay: 0.15s;
-  }
-
-  .custom-delay-2 {
-    animation-delay: 0.3s;
-  }
-
-  .custom-delay-3 {
-    animation-delay: 0.45s;
-  }
-
-  .custom-delay-4 {
-    animation-delay: 0.6s;
-  }
-
-  .custom-float {
-    animation: custom-float 6s ease-in-out infinite;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .custom-reveal {
-      opacity: 1;
-      animation: none;
-    }
-
-    .custom-float {
-      animation: none;
-    }
-  }
-</style>
