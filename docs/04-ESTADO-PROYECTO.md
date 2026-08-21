@@ -7,6 +7,15 @@
 
 ## Sesión — 2026-08-21 (19.ª)
 
+**Fase actual:** Fase 3 (Desarrollo) — fix de navbar en páginas de producto.
+
+**Hecho en esta sesión:**
+- Corregido bug: en páginas de producto (`/productos/[slug]`), los links del navbar (`#inicio`, `#productos`, etc.) no funcionaban porque las anclas no existían en esas páginas.
+  - **Causa:** links hardcodeados como anclas puras (`#section`) en `Navbar.astro`.
+  - **Fix:** detectar `Astro.url.pathname` en el frontmatter; si NO es `/`, los links se convierten a `/#section` (ruta absoluta al home + ancla). Logo también usa `logoHref` dinámico. `MobileMenu.tsx` recibe los mismos `links` por props → fix propagado automáticamente.
+  - Verificado: `pnpm build` correcto (7 páginas). Home usa `#section`, páginas de producto usan `/#section`. Click en navbar desde producto navega al home y scrollea a la sección.
+- Implementado el sistema de **animaciones scroll-triggered** (fade/scroll/hover) sin afectar performance:
+
 **Fase actual:** Fase 3 (Desarrollo) — item "Animaciones" completado.
 
 **Hecho en esta sesión:**

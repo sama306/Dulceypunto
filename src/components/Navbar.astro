@@ -3,22 +3,24 @@ import { siteConfig, waLink } from '../data/site';
 import MobileMenu from './MobileMenu';
 import perfil from '../assets/logo/perfil-1024.jpg';
 
+const isHome = Astro.url.pathname === '/';
 const links = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#productos', label: 'Productos' },
-  { href: '#pedidos', label: 'Pedidos' },
-  { href: '#galeria', label: 'Galería' },
-  { href: '#sobre', label: 'Sobre nosotros' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: isHome ? '#inicio' : '/#inicio', label: 'Inicio' },
+  { href: isHome ? '#productos' : '/#productos', label: 'Productos' },
+  { href: isHome ? '#pedidos' : '/#pedidos', label: 'Pedidos' },
+  { href: isHome ? '#galeria' : '/#galeria', label: 'Galería' },
+  { href: isHome ? '#sobre' : '/#sobre', label: 'Sobre nosotros' },
+  { href: isHome ? '#contacto' : '/#contacto', label: 'Contacto' },
 ];
 
+const logoHref = isHome ? '#inicio' : '/#inicio';
 const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero hacer una consulta 💕`);
 ---
 
 <header class="sticky top-0 z-50">
   <div id="navbar-inner" class="nav-bar relative border-b border-accent/15 backdrop-blur-md">
     <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[4.5rem]">
-      <a href="#inicio" class="group flex min-w-0 items-center gap-3" aria-label="Dulce & Punto — volver al inicio">
+      <a href={logoHref} class="group flex min-w-0 items-center gap-3" aria-label="Dulce & Punto — volver al inicio">
         <span class="shrink-0 overflow-hidden rounded-full ring-1 ring-accent/30 ring-offset-2 ring-offset-background transition-transform duration-300 group-hover:scale-105">
           <img src={perfil.src} alt="Logo de Dulce & Punto" width={96} height={96} class="h-10 w-10 rounded-full object-cover lg:h-12 lg:w-12" />
         </span>
