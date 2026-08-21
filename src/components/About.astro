@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import { siteConfig } from '../data/site';
 import portada from '../assets/logo/portada-735x420.jpg';
 import perfil from '../assets/logo/perfil-1024.jpg';
@@ -59,11 +60,10 @@ import perfil from '../assets/logo/perfil-1024.jpg';
 
       <div class="reveal reveal-delay-2 relative mx-auto mt-2 w-full max-w-md lg:mt-0 lg:max-w-none">
         <figure class="overflow-hidden rounded-[1.75rem] shadow-xl shadow-text/15 ring-4 ring-surface">
-          <img
-            src={portada.src}
+          <Picture
+            src={portada}
             alt="Portada de Dulce & Punto con sus dulces caseros"
-            width={735}
-            height={420}
+            formats={['avif', 'webp']}
             loading="lazy"
             decoding="async"
             class="h-auto w-full object-cover"
@@ -72,11 +72,10 @@ import perfil from '../assets/logo/perfil-1024.jpg';
 
         <div class="absolute -bottom-6 -left-2 sm:-left-6">
           <span class="block overflow-hidden rounded-full shadow-lg shadow-text/15 ring-4 ring-surface">
-            <img
-              src={perfil.src}
+            <Picture
+              src={perfil}
               alt="Logo circular de Dulce & Punto"
-              width={1024}
-              height={1024}
+              formats={['avif', 'webp']}
               loading="lazy"
               decoding="async"
               class="h-24 w-24 rounded-full object-cover lg:h-28 lg:w-28"

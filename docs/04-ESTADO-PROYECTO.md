@@ -5,7 +5,33 @@
 
 ---
 
-## Sesión — 2026-08-21 (19.ª)
+## Sesión — 2026-08-21 (20.ª)
+
+**Fase actual:** Fase 3 (Desarrollo) — item "Optimización de imágenes" completado. **Fase 3 COMPLETA.**
+
+**Hecho en esta sesión:**
+- Instalado `sharp` (`pnpm add sharp` — v0.35.3).
+- Configurado `astro.config.mjs` con `image.service` usando sharp: WebP (`effort: 6`), JPEG con `mozjpeg: true`.
+- **Hero.astro:** 3 `<img>` reemplazados por `<Picture formats={['avif', 'webp']}>`. Imagen central mantiene `fetchpriority="high"` (LCP candidate). Las 3 imágenes con `loading="eager"` (above-the-fold).
+- **Navbar.astro:** `<img>` del logo reemplazado por `<Image>` de `astro:assets` (WebP default, tamaño pequeño).
+- **About.astro:** 2 `<img>` reemplazados por `<Picture formats={['avif', 'webp']}>` con `loading="lazy"`.
+- **CustomOrders.astro:** 1 `<img>` reemplazado por `<Picture formats={['avif', 'webp']}>` con `loading="lazy"`.
+- **Footer.astro:** `<img>` del logo reemplazado por `<Image>` con `loading="lazy"`.
+- **[slug].astro:** `<img>` reemplazado por `<Image>` con `loading="eager"` (imagen principal de página de producto).
+- **ProductCard.tsx / GalleryGrid.tsx:** sin cambios (islas React, `<img>` directo con `loading="lazy"` — patrón mantenido).
+- Verificado: `pnpm build` correcto (7 páginas, 22 imágenes optimizadas). En `dist/_astro/`: 6 AVIF, 10 WebP, 21 JPG fallback. HTML generado contiene 6 `<picture>` con sources AVIF+WebP, `fetchpriority="high"` en Hero central, lazy loading en below-the-fold. React islands funcionando (15 gallery items, 6 product cards).
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 3): "Optimización de imágenes (Astro Image, WebP/AVIF, lazy loading)".
+
+**Fase 3 completada.** Todos los items del roadmap marcados `[x]`.
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** `<title>` y meta description por página, Open Graph tags, Favicon, URLs limpias, Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
 
 **Fase actual:** Fase 3 (Desarrollo) — fix de navbar en páginas de producto.
 

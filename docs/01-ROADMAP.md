@@ -52,7 +52,7 @@ fase entera en una sola sesión.
 - [x] Integración de botones WhatsApp (deep link `wa.me`)
 - [x] Responsive completo (mobile-first)
 - [x] Animaciones (fade/scroll/hover) sin afectar performance
-- [ ] Optimización de imágenes (Astro Image, WebP/AVIF, lazy loading)
+- [x] Optimización de imágenes (Astro Image, WebP/AVIF, lazy loading)
 
 ## Fase 4 — SEO y rendimiento
 

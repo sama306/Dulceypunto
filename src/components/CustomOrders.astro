@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets';
 import { siteConfig, waLink } from '../data/site';
 import customBox from '../assets/products/producto-07.jpg';
 
@@ -74,11 +75,10 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero armar un pedido person
 
       <div class="reveal reveal-delay-2 relative mx-auto mt-2 w-full max-w-md lg:mt-0 lg:max-w-none">
         <figure class="overflow-hidden rounded-[1.75rem] shadow-xl shadow-text/15 ring-4 ring-surface">
-          <img
-            src={customBox.src}
+          <Picture
+            src={customBox}
             alt="Box personalizado de Dulce & Punto para el día del amigo"
-            width={customBox.width}
-            height={customBox.height}
+            formats={['avif', 'webp']}
             loading="lazy"
             decoding="async"
             class="h-auto w-full object-cover"

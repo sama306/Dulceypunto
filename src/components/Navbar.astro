@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { siteConfig, waLink } from '../data/site';
 import MobileMenu from './MobileMenu';
 import perfil from '../assets/logo/perfil-1024.jpg';
@@ -22,7 +23,7 @@ const ctaHref = waLink(`¡Hola ${siteConfig.name}! Quiero hacer una consulta �
     <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-[4.5rem]">
       <a href={logoHref} class="group flex min-w-0 items-center gap-3" aria-label="Dulce & Punto — volver al inicio">
         <span class="shrink-0 overflow-hidden rounded-full ring-1 ring-accent/30 ring-offset-2 ring-offset-background transition-transform duration-300 group-hover:scale-105">
-          <img src={perfil.src} alt="Logo de Dulce & Punto" width={96} height={96} class="h-10 w-10 rounded-full object-cover lg:h-12 lg:w-12" />
+          <Image src={perfil} alt="Logo de Dulce & Punto" width={96} height={96} class="h-10 w-10 rounded-full object-cover lg:h-12 lg:w-12" />
         </span>
         <span class="min-w-0 leading-none">
           <span class="block truncate font-display text-lg font-semibold tracking-tight text-text lg:text-xl">Dulce &amp; Punto</span>

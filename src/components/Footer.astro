@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { siteConfig } from '../data/site';
 import perfil from '../assets/logo/perfil-1024.jpg';
 
@@ -31,8 +32,8 @@ const socials = [
       <div class="max-w-xs">
         <a href="#inicio" class="group flex min-w-0 items-center gap-3" aria-label="Dulce & Punto — volver al inicio">
           <span class="shrink-0 overflow-hidden rounded-full ring-1 ring-accent/30 ring-offset-2 ring-offset-background transition-transform duration-300 group-hover:scale-105">
-            <img
-              src={perfil.src}
+            <Image
+              src={perfil}
               alt="Logo de Dulce & Punto"
               width={96}
               height={96}

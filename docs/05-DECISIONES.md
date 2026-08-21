@@ -5,6 +5,48 @@
 
 ---
 
+### 2026-08-21 — Optimización de imágenes: Sharp + Astro Image/Picture
+
+**Decisión:** se instala `sharp` y se reemplazan los `<img>` directos por
+`<Image>` / `<Picture>` de `astro:assets` en todos los componentes `.astro`.
+Las islas React (`ProductCard.tsx`, `GalleryGrid.tsx`) se mantienen con `<img>`
+directo + `loading="lazy"` porque no pueden usar componentes de Astro.
+
+**Estrategia por componente:**
+- **Hero.astro:** 3 `<Picture formats={['avif', 'webp']}>` con `loading="eager"` (above-the-fold). La imagen central mantiene `fetchpriority="high"` (LCP candidate).
+- **Navbar.astro:** `<Image>` para el logo (formato WebP default, tamaño pequeño 96×96).
+- **About.astro:** 2 `<Picture formats={['avif', 'webp']}>` con `loading="lazy"`.
+- **CustomOrders.astro:** 1 `<Picture formats={['avif', 'webp']}>` con `loading="lazy"`.
+- **Footer.astro:** `<Image>` para el logo (WebP default, `loading="lazy"`).
+- **[slug].astro:** `<Image>` con `loading="eager"` (imagen principal de página de producto).
+- **ProductCard.tsx / GalleryGrid.tsx:** `<img>` directo (islas React, sin cambio).
+
+**Configuración de `astro.config.mjs`:**
+```js
+image: {
+  service: {
+    entrypoint: 'astro/assets/services/sharp',
+    config: {
+      webp: { effort: 6 },
+      jpeg: { mozjpeg: true },
+    },
+  },
+},
+```
+
+**Resultado del build:** 22 imágenes optimizadas (6 AVIF + 10 WebP + 21 JPG
+fallback). `dist/_astro/` contiene archivos `.avif`, `.webp` y `.jpg`. El
+fallback JPG se mantiene siempre en el `<img>` dentro de `<picture>`.
+
+**Razón:** `<Picture>` genera `<picture>` con `<source>` AVIF/WebP + fallback
+JPG, maximizando compatibilidad y minimizando tamaño. `<Image>` genera un
+`<img>` optimizado (WebP por defecto con sharp) para casos donde un solo
+formato es suficiente (logo pequeño). Las islas React usan `<img>` directo
+porque los componentes de Astro no están disponibles en JSX; el lazy loading
+ya estaba implementado manualmente.
+
+---
+
 ### 2026-08-21 — Animaciones scroll-triggered: CSS puro + IntersectionObserver global
 
 **Decisión:** se implementan las animaciones fade/scroll/hover con **CSS puro + IntersectionObserver global** (sin librerías externas). Estructura: `src/styles/animations.css` (keyframes reutilizables + clases `.reveal`/`.revealed` + delays + `prefers-reduced-motion`) + `src/scripts/scroll-reveal.ts` (un solo `IntersectionObserver` con `threshold: 0.15`, `unobserve` después de revelar, re-init en `astro:page-load`). Se importan en `Layout.astro`. Hero mantiene animación de carga original (above-the-fold). About y CustomOrders migran de keyframes locales a clases compartidas. Contact, Footer, ProductCatalog y Gallery ganan animación de entrada por primera vez. GalleryGrid y ProductFilter reutilizan `fade-up` global en vez de duplicar keyframes. MobileMenu.tsx agrega respeto a `prefers-reduced-motion` via `matchMedia`.
