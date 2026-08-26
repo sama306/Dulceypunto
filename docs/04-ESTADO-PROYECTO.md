@@ -5,6 +5,28 @@
 
 ---
 
+## Sesión — 2026-08-25 (22.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — item "URLs limpias" completado.
+
+**Hecho en esta sesión:**
+- **`astro.config.mjs`**: agregado `trailingSlash: 'always'` para URLs consistentes con trailing slash. Nota: el valor debe ser string (`'always'`), no boolean (`true`), porque Astro espera un tipo del union `"always" | "never" | "ignore"`.
+- **`src/components/ProductCard.tsx`**: actualizado `detailHref` para incluir trailing slash: `/productos/${product.slug}/`.
+- Verificado: `pnpm build` correcto (7 páginas). URLs generadas con trailing slash consistente:
+  - Home: `https://dulceypunto.vercel.app/`
+  - Productos: `https://dulceypunto.vercel.app/productos/{slug}/`
+- Canonical URLs y OG URLs correctamente generadas con trailing slash.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "URLs limpias".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** items restantes — Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-25 (21.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página", "Open Graph tags" y "Favicon" completados. Fix de imágenes en dev mode.

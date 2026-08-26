@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function ProductCard({ product }: Props) {
-  const detailHref = `/productos/${product.slug}`;
+  const detailHref = `/productos/${product.slug}/`;
 
   return (
     <article

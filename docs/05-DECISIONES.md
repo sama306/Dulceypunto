@@ -5,6 +5,17 @@
 
 ---
 
+## 2026-08-25 — URLs limpias: trailing slash consistente (Fase 4)
+
+**Decisión:** se configura `trailingSlash: 'always'` en `astro.config.mjs` para URLs consistentes con trailing slash. Cambios realizados:
+- `astro.config.mjs`: agregado `trailingSlash: 'always'`.
+- `ProductCard.tsx`: `detailHref` actualizado a `/productos/${product.slug}/`.
+- Canonical URLs y OG URLs se generan automáticamente con trailing slash gracias a `Astro.url.pathname` que incluye el slash.
+
+**Razón:** URLs con trailing slash son el estándar para SEO (evitan duplicados con/sin slash), son más limpias y legibles, y Astro las maneja correctamente con `trailingSlash: 'always'`. El valor debe ser string (`'always'`), no boolean, porque Astro espera un tipo del union `"always" | "never" | "ignore"`.
+
+---
+
 ### 2026-08-25 — Open Graph tags (Fase 4)
 
 **Decisión:** se implementan tags Open Graph (`og:title`, `og:description`,

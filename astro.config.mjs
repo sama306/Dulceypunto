@@ -8,6 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dulceypunto.vercel.app',
+  trailingSlash: 'always',
   integrations: [react()],
 
   image: {
