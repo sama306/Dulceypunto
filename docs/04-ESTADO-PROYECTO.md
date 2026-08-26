@@ -7,7 +7,7 @@
 
 ## Sesión — 2026-08-25 (21.ª)
 
-**Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página", "Open Graph tags" y "Favicon" completados.
+**Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página", "Open Graph tags" y "Favicon" completados. Fix de imágenes en dev mode.
 
 **Hecho en esta sesión:**
 - **`public/og-home.jpg`**: copia de `src/assets/logo/portada-735x420.jpg` → imagen OG accesible vía URL absoluta.
@@ -23,6 +23,7 @@
 - **`src/layouts/Layout.astro`**: tags de favicon actualizados — `favicon.ico` (sizes 48×48), `favicon.svg` (type image/svg+xml), `favicon-16x16.png`, `favicon-32x32.png` y `apple-touch-icon.png`.
 - Verificado: `pnpm build` correcto (7 páginas). Todos los favicons personalizados copiados a `dist/`. Tags de favicon correctamente emitidos en HTML.
 - Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "`<title>` y meta description por página", "Open Graph tags" y "Favicon".
+- **Fix imágenes dev mode**: el endpoint `_image` de Astro dev retornaba 500 (`MissingSharp`) porque pnpm no resolvía Sharp en SSR. Fix: agregado `ssr: { noExternal: ['sharp'] }` en `astro.config.mjs`. Verificado: endpoint `_image` ahora retorna 200 OK con `image/webp`. Build sin regresiones.
 
 **Pendiente / próximo paso:**
 - **Fase 4 (SEO y rendimiento):** items restantes — URLs limpias, Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.

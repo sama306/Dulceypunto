@@ -43,6 +43,23 @@ diseñar uno vectorial manualmente.
 
 ---
 
+### 2026-08-25 — Fix imágenes dev mode: ssr.noExternal para Sharp
+
+**Decisión:** se agrega `ssr: { noExternal: ['sharp'] }` al bloque `vite`
+en `astro.config.mjs`. En dev mode, el endpoint `_image` de Astro intenta
+`import('sharp')` dinámicamente para optimizar imágenes al vuelo. Con pnpm,
+la estructura estricta de `node_modules` (symlinks) impide que Sharp se
+resuelva correctamente, resultando en un error 500 (`MissingSharp`). El
+`ssr.noExternal` fuerza a Vite a bundle Sharp en vez de dejarlo como import
+externo, resolviendo el problema. El build ya funcionaba porque Vite maneja
+la resolución de forma diferente en modo build.
+**Razón:** sin este fix, todas las imágenes que usan `<Picture>` o `<Image>`
+de `astro:assets` fallan en dev mode (About.astro, CustomOrders.astro,
+[slug].astro). El build y preview no se afectan (las imágenes se
+pre-optimizan estáticamente).
+
+---
+
 ### 2026-08-21 — Optimización de imágenes: Sharp + Astro Image/Picture
 
 **Decisión:** se instala `sharp` y se reemplazan los `<img>` directos por
