@@ -57,7 +57,7 @@ fase entera en una sola sesión.
 ## Fase 4 — SEO y rendimiento
 
 - [x] `<title>` y meta description por página
-- [ ] Open Graph tags
+- [x] Open Graph tags
 - [ ] Favicon
 - [ ] URLs limpias
 - [ ] Alt text en todas las imágenes

@@ -7,16 +7,28 @@ interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  ogImage?: string;
+  ogType?: 'website' | 'product';
 }
 
 const {
   title = siteConfig.name,
   description = siteConfig.tagline,
   noindex = false,
+  ogImage = '/og-home.jpg',
+  ogType = 'website',
 } = Astro.props;
 
 const canonicalURL = Astro.site
   ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
+
+const pageURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : undefined;
+
+const ogImageAbsolute = Astro.site
+  ? new URL(ogImage, Astro.site)
   : undefined;
 ---
 
@@ -34,6 +46,14 @@ const canonicalURL = Astro.site
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<title>{title}</title>
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={ogType} />
+		{pageURL && <meta property="og:url" content={pageURL} />}
+		{ogImageAbsolute && <meta property="og:image" content={ogImageAbsolute} />}
+		<meta property="og:site_name" content={siteConfig.name} />
+		<meta property="og:locale" content="es_AR" />
 		<slot name="head" />
 	</head>
 	<body>

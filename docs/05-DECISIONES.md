@@ -5,6 +5,23 @@
 
 ---
 
+### 2026-08-25 — Open Graph tags (Fase 4)
+
+**Decisión:** se implementan tags Open Graph (`og:title`, `og:description`,
+`og:type`, `og:url`, `og:image`, `og:site_name`, `og:locale`) en
+`Layout.astro`. Nuevas props opcionales: `ogImage` (default `/og-home.jpg`) y
+`ogType` (default `'website'`). Las URLs son absolutas via `Astro.site`.
+`site` configurado como `'https://dulceypunto.vercel.app'` (placeholder hasta
+Fase 5). `baseUrl` agregado a `siteConfig` en `site.ts`. Imagen OG: copia de
+`portada-735x420.jpg` en `public/og-home.jpg`. Home usa `ogType="website"`,
+productos usan `ogType="product"`. Sin Twitter Card (decisión del usuario).
+Favicon postergado.
+**Razón:** los tags OG son estándar para compartir en redes sociales y
+aparecer correctamente al compartir links. La imagen OG necesita URL absoluta
+(public/), el dominio Vercel es placeholder hasta confirmar el real.
+
+---
+
 ### 2026-08-21 — Optimización de imágenes: Sharp + Astro Image/Picture
 
 **Decisión:** se instala `sharp` y se reemplazan los `<img>` directos por

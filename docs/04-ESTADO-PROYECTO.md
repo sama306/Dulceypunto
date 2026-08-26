@@ -5,6 +5,29 @@
 
 ---
 
+## Sesión — 2026-08-25 (21.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página" y "Open Graph tags" completados.
+
+**Hecho en esta sesión:**
+- **`public/og-home.jpg`**: copia de `src/assets/logo/portada-735x420.jpg` → imagen OG accesible vía URL absoluta.
+- **`astro.config.mjs`**: agregado `site: 'https://dulceypunto.vercel.app'` (placeholder hasta Fase 5). Habilita `Astro.site` para URLs absolutas y canonical.
+- **`src/data/site.ts`**: agregado `baseUrl: 'https://dulceypunto.vercel.app'` al `siteConfig`.
+- **`src/layouts/Layout.astro`**: nuevas props `ogImage?: string` (default `/og-home.jpg`) y `ogType?: 'website' | 'product'` (default `'website'`). Tags OG agregados en `<head>`: `og:title`, `og:description`, `og:type`, `og:url` (absoluta vía `Astro.site`), `og:image` (absoluta), `og:site_name`, `og:locale` (`es_AR`). Canonical ya funcionaba con `Astro.site`.
+- **`src/pages/index.astro`**: agregado `ogType="website"` (imagen por defecto).
+- **`src/pages/productos/[slug].astro`**: agregado `ogType="product"` (imagen por defecto).
+- Verificado: `pnpm build` correcto (7 páginas). Todas las páginas emiten los 7 tags OG con URLs absolutas correctas. Home: `og:type="website"`, productos: `og:type="product"`, todas con `og:image="https://dulceypunto.vercel.app/og-home.jpg"`.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "`<title>` y meta description por página" y "Open Graph tags".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** items restantes — Favicon (postergado), URLs limpias, Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-21 (20.ª)
 
 **Fase actual:** Fase 3 (Desarrollo) — item "Optimización de imágenes" completado. **Fase 3 COMPLETA.**

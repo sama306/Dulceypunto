@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: 'Dulce & Punto',
   tagline: 'Detalles dulces para regalar, sorprender o mimarte 💕',
+  baseUrl: 'https://dulceypunto.vercel.app',
   whatsapp: '5491165159776',
   instagram: 'https://www.instagram.com/dulceypunto.love',
   tiktok: 'https://www.tiktok.com/@DulceyPunto.love❤️',
