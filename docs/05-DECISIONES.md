@@ -15,10 +15,31 @@
 Fase 5). `baseUrl` agregado a `siteConfig` en `site.ts`. Imagen OG: copia de
 `portada-735x420.jpg` en `public/og-home.jpg`. Home usa `ogType="website"`,
 productos usan `ogType="product"`. Sin Twitter Card (decisión del usuario).
-Favicon postergado.
 **Razón:** los tags OG son estándar para compartir en redes sociales y
 aparecer correctamente al compartir links. La imagen OG necesita URL absoluta
 (public/), el dominio Vercel es placeholder hasta confirmar el real.
+
+---
+
+### 2026-08-25 — Favicon personalizado desde el logo (Fase 4)
+
+**Decisión:** se generan favicons completamente personalizados desde
+`perfil-1024.jpg`. Se instala `sharp-ico` (dependencia). Archivos generados:
+- `favicon.ico` (5,224 bytes): 3 tamaños embebidos (16×16, 32×32, 48×48)
+  usando `sharpsToIco()` de `sharp-ico`.
+- `favicon.svg` (6,674 bytes): imagen del logo embebida como base64 dentro
+  de un wrapper SVG (`<image href="data:image/png;base64,..."/>`).
+- PNGs individuales (16×16, 32×32, 48×48) y `apple-touch-icon.png` (180×180)
+  generados con Sharp.
+Tags `<link>` en `Layout.astro`: `favicon.ico` (sizes 48×48), `favicon.svg`
+(type image/svg+xml), `favicon-16x16.png`, `favicon-32x32.png` y
+`apple-touch-icon.png`. Se reemplazan los favicons genéricos de Astro.
+**Razón:** el favicon debe ser consistente con la identidad de la marca
+(logotipo real de Dulce & Punto). `sharp-ico` se integra directamente con
+Sharp (ya instalado) y genera el `.ico` con múltiples tamaños en una sola
+llamada. El SVG con imagen embebida funciona en navegadores modernos para
+favicon SVG y es la forma más simple de tener un SVG personalizado sin
+diseñar uno vectorial manualmente.
 
 ---
 

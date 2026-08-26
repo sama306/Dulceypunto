@@ -58,7 +58,7 @@ fase entera en una sola sesión.
 
 - [x] `<title>` y meta description por página
 - [x] Open Graph tags
-- [ ] Favicon
+- [x] Favicon
 - [ ] URLs limpias
 - [ ] Alt text en todas las imágenes
 - [ ] Sitemap

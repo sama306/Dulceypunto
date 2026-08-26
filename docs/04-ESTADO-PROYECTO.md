@@ -7,7 +7,7 @@
 
 ## Sesión — 2026-08-25 (21.ª)
 
-**Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página" y "Open Graph tags" completados.
+**Fase actual:** Fase 4 (SEO y rendimiento) — items "`<title>` y meta description por página", "Open Graph tags" y "Favicon" completados.
 
 **Hecho en esta sesión:**
 - **`public/og-home.jpg`**: copia de `src/assets/logo/portada-735x420.jpg` → imagen OG accesible vía URL absoluta.
@@ -16,11 +16,16 @@
 - **`src/layouts/Layout.astro`**: nuevas props `ogImage?: string` (default `/og-home.jpg`) y `ogType?: 'website' | 'product'` (default `'website'`). Tags OG agregados en `<head>`: `og:title`, `og:description`, `og:type`, `og:url` (absoluta vía `Astro.site`), `og:image` (absoluta), `og:site_name`, `og:locale` (`es_AR`). Canonical ya funcionaba con `Astro.site`.
 - **`src/pages/index.astro`**: agregado `ogType="website"` (imagen por defecto).
 - **`src/pages/productos/[slug].astro`**: agregado `ogType="product"` (imagen por defecto).
-- Verificado: `pnpm build` correcto (7 páginas). Todas las páginas emiten los 7 tags OG con URLs absolutas correctas. Home: `og:type="website"`, productos: `og:type="product"`, todas con `og:image="https://dulceypunto.vercel.app/og-home.jpg"`.
-- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "`<title>` y meta description por página" y "Open Graph tags".
+- **Favicon personalizado completo**: instalado `sharp-ico`, generados favicons desde `perfil-1024.jpg`:
+  - `favicon.ico` (5,224 bytes): 3 tamaños (16×16, 32×32, 48×48) con `sharpsToIco()`
+  - `favicon.svg` (6,674 bytes): imagen embebida en base64 dentro de un wrapper SVG
+  - `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `apple-touch-icon.png` (PNGs individuales)
+- **`src/layouts/Layout.astro`**: tags de favicon actualizados — `favicon.ico` (sizes 48×48), `favicon.svg` (type image/svg+xml), `favicon-16x16.png`, `favicon-32x32.png` y `apple-touch-icon.png`.
+- Verificado: `pnpm build` correcto (7 páginas). Todos los favicons personalizados copiados a `dist/`. Tags de favicon correctamente emitidos en HTML.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "`<title>` y meta description por página", "Open Graph tags" y "Favicon".
 
 **Pendiente / próximo paso:**
-- **Fase 4 (SEO y rendimiento):** items restantes — Favicon (postergado), URLs limpias, Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- **Fase 4 (SEO y rendimiento):** items restantes — URLs limpias, Alt text en todas las imágenes, Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
 - Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
 
 **Bloqueos:**
