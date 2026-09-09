@@ -62,7 +62,7 @@ fase entera en una sola sesión.
 - [x] URLs limpias
 - [x] Alt text en todas las imágenes
 - [x] Sitemap
-- [ ] Robots.txt
+- [x] Robots.txt
 - [ ] Schema.org LocalBusiness/FoodEstablishment
 - [ ] Auditoría Lighthouse (performance, accesibilidad, SEO)
 

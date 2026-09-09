@@ -5,6 +5,30 @@
 
 ---
 
+## Sesión — 2026-09-09 (25.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — item "Robots.txt" completado.
+
+**Hecho en esta sesión:**
+- **`public/robots.txt`** (nuevo): archivo estático con instrucciones para crawlers:
+  ```
+  User-agent: *
+  Allow: /
+
+  Sitemap: https://dulceypunto.vercel.app/sitemap-index.xml
+  ```
+- Verificado: `pnpm build` correcto (7 páginas, 22 imágenes). El archivo `robots.txt` se copió correctamente a `dist/robots.txt` con el contenido esperado.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "Robots.txt".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** items restantes — Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-09-09 (24.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — item "Sitemap" completado.
