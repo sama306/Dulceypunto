@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -9,7 +10,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://dulceypunto.vercel.app',
   trailingSlash: 'always',
-  integrations: [react()],
+  integrations: [react(), sitemap()],
 
   image: {
     service: {

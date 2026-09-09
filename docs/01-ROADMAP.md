@@ -61,7 +61,7 @@ fase entera en una sola sesión.
 - [x] Favicon
 - [x] URLs limpias
 - [x] Alt text en todas las imágenes
-- [ ] Sitemap
+- [x] Sitemap
 - [ ] Robots.txt
 - [ ] Schema.org LocalBusiness/FoodEstablishment
 - [ ] Auditoría Lighthouse (performance, accesibilidad, SEO)

@@ -5,6 +5,34 @@
 
 ---
 
+## Sesión — 2026-09-09 (24.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — item "Sitemap" completado.
+
+**Hecho en esta sesión:**
+- Instalado `@astrojs/sitemap` v3.7.4 (`pnpm add @astrojs/sitemap`).
+- **`astro.config.mjs`**: agregada importación `import sitemap from '@astrojs/sitemap'` y la integración `sitemap()` en el array `integrations`.
+- Verificado: `pnpm build` correcto (7 páginas, 22 imágenes). El sitemap se generó automáticamente en `dist/`:
+  - `sitemap-index.xml` → indexa `sitemap-0.xml`
+  - `sitemap-0.xml` → contiene las 7 URLs correctas con trailing slash:
+    - `https://dulceypunto.vercel.app/`
+    - `https://dulceypunto.vercel.app/productos/box-dia-del-amigo/`
+    - `https://dulceypunto.vercel.app/productos/box-para-mates/`
+    - `https://dulceypunto.vercel.app/productos/cajitas-personalizadas/`
+    - `https://dulceypunto.vercel.app/productos/combo-para-compartir/`
+    - `https://dulceypunto.vercel.app/productos/opciones-dia-del-amigo/`
+    - `https://dulceypunto.vercel.app/productos/tartas-100-caseras/`
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "Sitemap".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** items restantes — Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-09-09 (23.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — item "Alt text en todas las imágenes" completado.
