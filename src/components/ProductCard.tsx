@@ -20,7 +20,7 @@ export default function ProductCard({ product }: Props) {
       >
         <img
           src={product.image.src}
-          alt={product.name}
+          alt={`${product.name} de Dulce & Punto`}
           width={product.image.width}
           height={product.image.height}
           loading="lazy"

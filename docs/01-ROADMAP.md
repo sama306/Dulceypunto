@@ -60,7 +60,7 @@ fase entera en una sola sesión.
 - [x] Open Graph tags
 - [x] Favicon
 - [x] URLs limpias
-- [ ] Alt text en todas las imágenes
+- [x] Alt text en todas las imágenes
 - [ ] Sitemap
 - [ ] Robots.txt
 - [ ] Schema.org LocalBusiness/FoodEstablishment

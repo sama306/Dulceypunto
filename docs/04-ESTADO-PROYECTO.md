@@ -5,6 +5,26 @@
 
 ---
 
+## Sesión — 2026-09-09 (23.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — item "Alt text en todas las imágenes" completado.
+
+**Hecho en esta sesión:**
+- **`src/data/gallery.ts`**: mejorados los 15 alt text de la galería para que sean únicos y descriptivos (antes varios eran genéricos/repetitivos). Ejemplos: "Tarta casera de Dulce & Punto — detalle de relleno", "Box día del amigo de Dulce & Punto — contenido completo", "Combo de dulces caseros de Dulce & Punto — variedad".
+- **`src/components/ProductCard.tsx`**: actualizado el alt text de las cards de producto para incluir "de Dulce & Punto" al final (antes solo decía el nombre del producto).
+- **`src/pages/productos/[slug].astro`**: actualizado el alt text de la imagen principal del detalle de producto para incluir "de Dulce & Punto".
+- Verificado: `pnpm build` correcto (7 páginas, 22 imágenes optimizadas). Todos los alt text actualizados correctamente en el HTML generado.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "Alt text en todas las imágenes".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** items restantes — Sitemap, Robots.txt, Schema.org LocalBusiness/FoodEstablishment, Auditoría Lighthouse.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-08-25 (22.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — item "URLs limpias" completado.
