@@ -5,6 +5,24 @@
 
 ---
 
+## Sesión — 2026-09-09 (26.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — item "Schema.org LocalBusiness/FoodEstablishment" completado.
+
+**Hecho en esta sesión:**
+- **`src/components/SchemaOrg.astro`** (nuevo): componente que emite JSON-LD con schema `LocalBusiness` + `FoodEstablishment` + `Bakery`. Datos: nombre, descripción, URL, teléfono, área de servicio (Burzaco, PBA), geocoordenadas, cuisine type, redes sociales (sameAs), acción de contacto por WhatsApp.
+- **`src/layouts/Layout.astro`**: importado y renderizado `<SchemaOrg />` dentro de `<head>` para que esté en todas las páginas.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "Schema.org LocalBusiness/FoodEstablishment".
+
+**Pendiente / próximo paso:**
+- **Fase 4 (SEO y rendimiento):** último item — Auditoría Lighthouse (performance, accesibilidad, SEO).
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-09-09 (25.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — item "Robots.txt" completado.

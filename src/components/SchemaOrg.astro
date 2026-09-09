@@ -1,0 +1,57 @@
+---
+import { siteConfig } from '../data/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteConfig.baseUrl}/#business`,
+  name: siteConfig.name,
+  description: siteConfig.tagline,
+  url: siteConfig.baseUrl,
+  image: `${siteConfig.baseUrl}/og-home.jpg`,
+  telephone: `+${siteConfig.whatsapp}`,
+  areaServed: {
+    '@type': 'City',
+    name: 'Burzaco',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'Buenos Aires',
+      containedInPlace: {
+        '@type': 'Country',
+        name: 'Argentina',
+      },
+    },
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -34.846,
+    longitude: -58.395,
+  },
+  priceRange: '$$',
+  servesCuisine: ['Repostería', 'Pastelería', 'Dulces'],
+  acceptsReservations: 'False',
+  hasMap: 'https://maps.google.com/?q=Burzaco,Buenos+Aires,Argentina',
+  sameAs: [siteConfig.instagram, siteConfig.facebook, siteConfig.tiktok],
+  potentialAction: {
+    '@type': 'CommunicateAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `https://wa.me/${siteConfig.whatsapp}`,
+      actionPlatform: [
+        'http://schema.org/HtmlWebPlatform',
+        'http://schema.org/AndroidPlatform',
+        'http://schema.org/IOSPlatform',
+      ],
+    },
+    name: 'Contactar por WhatsApp',
+  },
+  subEvent: {
+    '@type': 'FoodEstablishment',
+    name: `${siteConfig.name} — Online`,
+    url: siteConfig.baseUrl,
+    description: 'Catálogo online de dulces, tartas y cajitas personalizadas.',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

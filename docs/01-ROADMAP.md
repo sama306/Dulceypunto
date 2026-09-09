@@ -63,7 +63,7 @@ fase entera en una sola sesión.
 - [x] Alt text en todas las imágenes
 - [x] Sitemap
 - [x] Robots.txt
-- [ ] Schema.org LocalBusiness/FoodEstablishment
+- [x] Schema.org LocalBusiness/FoodEstablishment
 - [ ] Auditoría Lighthouse (performance, accesibilidad, SEO)
 
 ## Fase 5 — Deploy

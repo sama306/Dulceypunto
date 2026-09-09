@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/animations.css';
 import { siteConfig } from '../data/site';
+import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
   title?: string;
@@ -57,6 +58,7 @@ const ogImageAbsolute = Astro.site
 		{ogImageAbsolute && <meta property="og:image" content={ogImageAbsolute} />}
 		<meta property="og:site_name" content={siteConfig.name} />
 		<meta property="og:locale" content="es_AR" />
+		<SchemaOrg />
 		<slot name="head" />
 	</head>
 	<body>
