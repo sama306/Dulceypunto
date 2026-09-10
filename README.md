@@ -89,31 +89,6 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 | `pnpm preview` | Preview del build local |
 | `pnpm generate-favicons` | Regenera favicons desde el logo |
 
-## Configuración
-
-Las variables de color y fuentes se definen en `src/styles/global.css` dentro del bloque `@theme` de Tailwind v4:
-
-| Variable | Color | Uso |
-|:---|:---|:---|
-| `--color-primary` | `#F0E0E0` | Crema / rosa empolvado |
-| `--color-secondary` | `#F0E0C0` | Beige cálido |
-| `--color-accent` | `#6b5b5b` | Marrón-mauve (texto sutil) |
-| `--color-text` | `#504040` | Marrón oscuro (texto principal) |
-| `--color-whatsapp` | `#25D366` | Verde WhatsApp |
-
-La configuración del negocio (nombre, WhatsApp, redes) está centralizada en `src/data/site.ts`.
-
-## Datos del negocio
-
-| Dato | Valor |
-|:---|:---|
-| Nombre | Dulce & Punto |
-| Zona | Burzaco, PBA, Argentina |
-| WhatsApp | [011 6515-9776](https://wa.me/5491165159776) |
-| Instagram | [@dulceypunto.love](https://www.instagram.com/dulceypunto.love) |
-| TikTok | [@DulceyPunto.love](https://www.tiktok.com/@DulceyPunto.love❤️) |
-| Facebook | [DulceyPunto.lovd](https://www.facebook.com/people/DulceyPuntolovd/61577830802142/) |
-
 ## Roadmap
 
 | Fase | Estado |
@@ -126,10 +101,6 @@ La configuración del negocio (nombre, WhatsApp, redes) está centralizada en `s
 | 5 — Deploy | 🔄 En progreso (hosting + dominio configurados) |
 
 Ver `docs/01-ROADMAP.md` para el detalle completo de cada fase.
-
-## Backlog (fuera de v1)
-
-Catálogo administrable, panel admin, base de datos, carrito, checkout, pagos online, gestión de pedidos, login admin, promociones/cupones, favoritos, integración avanzada con Instagram, reservas, emails automáticos, PWA.
 
 ---
 
