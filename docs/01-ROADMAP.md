@@ -71,7 +71,7 @@ fase entera en una sola sesión.
 - [x] Elegir hosting (Vercel / Netlify / Cloudflare Pages)
 - [x] Configurar dominio
 - [x] HTTPS
-- [ ] Google Analytics (si el cliente lo pide)
+- [x] Google Analytics (si el cliente lo pide)
 - [ ] Google Search Console
 
 ---
