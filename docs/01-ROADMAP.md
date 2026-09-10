@@ -22,7 +22,7 @@ fase entera en una sola sesión.
 - [x] Identificar paleta de colores real — extraída del logo (ver `02-INFO-PENDIENTE.md`)
 - [x] Identificar tipografía / estilo visual real (no hay fuente oficial → decidir en Fase 2)
 - [x] Completar `02-INFO-PENDIENTE.md` con datos del negocio (nombre, contacto, categorías, descripción)
-- [ ] Cargar precios y métodos de pago (los provee el dueño)
+- [x] Cargar precios y métodos de pago (los provee el dueño)
 
 ## Fase 2 — Diseño
 
