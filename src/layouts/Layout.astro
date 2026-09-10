@@ -60,6 +60,14 @@ const ogImageAbsolute = Astro.site
 		<meta property="og:locale" content="es_AR" />
 		<SchemaOrg />
 		<slot name="head" />
+		<!-- Google Analytics -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3KXB8M83XK"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-3KXB8M83XK');
+		</script>
 	</head>
 	<body>
 		<slot />
