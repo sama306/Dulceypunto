@@ -68,8 +68,8 @@ fase entera en una sola sesión.
 
 ## Fase 5 — Deploy
 
-- [ ] Elegir hosting (Vercel / Netlify / Cloudflare Pages)
-- [ ] Configurar dominio
+- [x] Elegir hosting (Vercel / Netlify / Cloudflare Pages)
+- [x] Configurar dominio
 - [ ] HTTPS
 - [ ] Google Analytics (si el cliente lo pide)
 - [ ] Google Search Console
