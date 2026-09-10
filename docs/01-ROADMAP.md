@@ -64,7 +64,7 @@ fase entera en una sola sesión.
 - [x] Sitemap
 - [x] Robots.txt
 - [x] Schema.org LocalBusiness/FoodEstablishment
-- [ ] Auditoría Lighthouse (performance, accesibilidad, SEO)
+- [x] Auditoría Lighthouse (performance, accesibilidad, SEO)
 
 ## Fase 5 — Deploy
 

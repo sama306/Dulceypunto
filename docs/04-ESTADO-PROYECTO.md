@@ -5,6 +5,31 @@
 
 ---
 
+## Sesión — 2026-09-09 (27.ª)
+
+**Fase actual:** Fase 4 (SEO y rendimiento) — **COMPLETA**. Auditoría Lighthouse realizada.
+
+**Hecho en esta sesión:**
+- **Auditoría Lighthouse** (desktop): Accessibility 96, Best Practices 100, SEO 100.
+- **`src/styles/global.css`**: oscurecidos `--color-accent` y `--color-text-muted` de `#A09090` a `#6b5b5b` para pasar contraste WCAG (ratio ~5.6:1 vs mínimo 4.5:1). Se resolvieron ~15 instancias de `color-contrast` fail en Navbar, cards de producto, descripciones y secciones.
+- **`src/components/Navbar.astro`**: eliminado `aria-label` del link del logo (causaba `label-content-name-mismatch` por desajuste entre `&amp;` HTML y `&` del aria-label; el texto visible "Dulce & Punto / hecho con amor" ya es suficiente como accessible name).
+- Reiniciado dev server + limpiado cache de Vite (`node_modules/.vite`): resueltos 10 errores 500 del endpoint `_image` en dev mode (imágenes AVIF/WebP de Hero y logo).
+- **`pnpm build`**: correcto (7 páginas, 22 imágenes). Sin regresiones.
+- Marcado `[x]` en `01-ROADMAP.md` (Fase 4): "Auditoría Lighthouse (performance, accesibilidad, SEO)".
+- **Fase 4 completada.** Todos los items del roadmap marcados `[x]`.
+
+**Trade-off aceptado:**
+- El botón WhatsApp (`bg-whatsapp` = `#25D366` + texto blanco `#ffffff`) tiene ratio 1.98 (< 4.5:1). Se mantiene porque es el color oficial de la marca. Lighthouse lo marca como warning en Accessibility.
+
+**Pendiente / próximo paso:**
+- **Fase 5 (Deploy):** elegir hosting, configurar dominio, HTTPS, Google Analytics, Google Search Console.
+- Cargar precios sigue postergado (los provee el dueño, item de Fase 1).
+
+**Bloqueos:**
+- Ninguno. **Nota:** los commits los hace el usuario manualmente.
+
+---
+
 ## Sesión — 2026-09-09 (26.ª)
 
 **Fase actual:** Fase 4 (SEO y rendimiento) — item "Schema.org LocalBusiness/FoodEstablishment" completado.

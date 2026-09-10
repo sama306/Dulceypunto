@@ -5,7 +5,14 @@
 
 ---
 
-## 2026-08-25 — URLs limpias: trailing slash consistente (Fase 4)
+## 2026-09-09 — Auditoría Lighthouse: contraste de colores y accesibilidad (Fase 4)
+
+**Decisión:** se oscurecen `--color-accent` y `--color-text-muted` de `#A09090` a `#6b5b5b` en `global.css` para pasar el audit `color-contrast` de Lighthouse (ratio ~5.6:1 vs mínimo 4.5:1). Se elimina el `aria-label` del link del logo en `Navbar.astro` (causaba `label-content-name-mismatch` por desajuste entre `&amp;` HTML y `&` del aria-label). El botón WhatsApp (`#25D366` + blanco) se mantiene como está (color oficial de la marca, trade-off aceptado).
+**Razón:** Accessibility sube de 96 a ~100 (salvo el warning de WhatsApp). Best Practices llega a 100. SEO ya estaba en 100. El cache de Vite se limpió para resolver errores 500 del endpoint `_image` en dev mode.
+
+---
+
+### 2026-08-25 — URLs limpias: trailing slash consistente (Fase 4)
 
 **Decisión:** se configura `trailingSlash: 'always'` en `astro.config.mjs` para URLs consistentes con trailing slash. Cambios realizados:
 - `astro.config.mjs`: agregado `trailingSlash: 'always'`.
