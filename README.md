@@ -103,5 +103,3 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 Ver `docs/01-ROADMAP.md` para el detalle completo de cada fase.
 
 ---
-
-Desarrollado con 💕 para Dulce & Punto.
