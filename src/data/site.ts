@@ -3,8 +3,6 @@ export const siteConfig = {
   tagline: 'Detalles dulces para regalar, sorprender o mimarte 💕',
   baseUrl: 'https://dulceypunto.vercel.app',
   whatsapp: '5491165159776',
-  instagram: 'https://www.instagram.com/dulceypunto.love',
-  tiktok: 'https://www.tiktok.com/@DulceyPunto.love❤️',
   facebook: 'https://www.facebook.com/people/DulceyPuntolovd/61577830802142/',
   zone: 'Burzaco, PBA',
 } as const;
